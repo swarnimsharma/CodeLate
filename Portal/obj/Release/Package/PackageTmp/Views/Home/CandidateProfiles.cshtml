@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "CandidateProfiles";
+    Layout = "~/Views/Shared/_WebsiteLayout.cshtml";
+}
+<input type="hidden" id="candidate_profiles_title" value="@ViewBag.search_title" />
+<input type="hidden" id="candidate_profiles_locality" value="@ViewBag.search_locality" />
+<input type="hidden" id="candidate_profiles_experience" value="@ViewBag.search_experience" />
+<input type="hidden" id="hidden_candidate_id" />
+<div class="row" style="margin-top:20px !important;margin-bottom:20px !important">
+    <div class="col-md-12 pull-right">
+        <div class="col-md-2">
+            <select id="sort_by_profile" class="form-control" onchange="Candidate.SearchCandidates()">
+                <option value="">Sort By Profile</option>
+                <option value="all">All</option>
+                <option value="with_pic">Profile with Photo</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <select id="sort_by_time" class="form-control" onchange="Candidate.SearchCandidates()">
+                <option value="ord_by_new">Newest First</option>
+                <option value="ord_by_old">Oldest First</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <select id="sort_by_expertise" class="form-control" onchange="Candidate.SearchCandidates()">
+                <option value="">Sort By Expertise</option>
+                <option value="ord_by_asc_exp">Expertise Level (Ascending)</option>
+                <option value="ord_by_desc_exp">Expertise Level (Descending)</option>
+
+            </select>
+        </div>
+        <div class="col-md-2">
+            <select id="sort_by_availability" class="form-control" onchange="Candidate.SearchCandidates()">
+                <option value="">Available within </option>
+                <option value="Immediate">Immediate</option>
+                <option value="7">7 days</option>
+                <option value="15">15 days</option>
+                <option value="20">20 days</option>
+                <option value="25">25 days</option>
+                <option value="30_more">30 and more days</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <select id="sort_by_job_type" placeholder="Employment" class="form-control" onchange="Candidate.SearchCandidates()">
+                <option value="" disabled selected>Employment Type</option>
+                <option value="3">Contractual</option>
+                <option value="2">FullTime</option>
+                <option value="1">Both</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="" id="candidate_profile_list">
+
+</div>
+@*@Html.Action("CandidateProfileList", "Candidate", new { title = ViewBag.search_title, locality = ViewBag.search_locality, experience = ViewBag.search_experience })*@
+
+@section scripts {
+
+    <script>
+        $(function () {
+            Candidate.SearchCandidates();
+        })
+    </script>
+}

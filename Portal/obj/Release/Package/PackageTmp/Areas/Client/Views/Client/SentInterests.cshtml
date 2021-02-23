@@ -1,0 +1,65 @@
+﻿@model List<Portal.ViewModels.InterestedToCandidateViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+@{
+    ViewBag.Title = "Sent Interests For Particular Candidate";
+    Layout = "~/Areas/Client/Views/Shared/_ClientLayout.cshtml";
+}
+
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th><center>Title</center></th>
+                    <th><center>Requested Date</center></th>
+                    <th><center>Expertise</center></th>
+                    <th><center>Experience</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.requirement_title</td>
+                        <td>@item.requested_date</td>
+                        <td>@item.expertise</td>
+                        <td>@item.experience</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-plan-box;
+        padding: 5px;
+    }
+</style>

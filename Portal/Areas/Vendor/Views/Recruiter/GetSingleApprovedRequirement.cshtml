@@ -1,0 +1,40 @@
+﻿@model Portal.ViewModels.PostYourRequirement
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default" id="approv_reject_panel" style="">
+            <div class="panel-heading">Post Requirement Details</div>
+            <div class="panel-body">
+                <div class="row">
+                    <input type="hidden" id="hidden_post_requirement_id" />
+                    <div class="form-group col-md-12 col-xs-12" style="">
+                        <div class="alert alert-info" style="background-color: #d9edf7;color: #31708f;border-color: #bce8f1;">
+                            <strong>Info!</strong> You have Selected Post #<span id="post_requirement_no">@Model.post_id</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="">
+                    <ul>
+                        <li><strong>Requirement :</strong> @Model.requirement_title</li>
+                        <li><strong>Subject :</strong> @Model.subject</li>
+                        <li><strong>Project Type :</strong> @Model.project_type</li>
+                        <li><strong>Message :</strong> @Model.message</li>
+                    </ul>
+                    <hr />
+                    <div class="col-md-offset-4">
+                        <strong style="font-size:17px">Personal Details:</strong>
+                    </div>
+                    <br />
+                    <ul>
+                        <li><strong>Name :</strong> @Model.fullname</li>
+                        <li><strong>Mobile No :</strong> @Model.mobile_no</li>
+                        <li><strong>Email :</strong> @Model.email_id</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-body">
+                <button type="button" class="btn btn-secondary pull-right" onclick="Candidate.CloseRequirementDetail()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

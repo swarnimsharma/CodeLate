@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Plans";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" onclick='AdminPlans.OpenPlanModal()' class="btn btn-primary pull-right">Add Plan</button>
+    </div>
+</div>
+<br />
+<br />
+<div id="plan_list_div">
+
+</div>
+
+
+@section scripts {
+    @Html.Partial("~/Views/Shared/_PlanForm.cshtml")
+    <script src="~/Areas/Admin/Scripts/Modules/Plans.js"></script>
+    <script>
+        $(function () {
+            AdminPlans.LoadPlanList();
+        });
+    </script>
+
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94e6ee5537294d729941672de8987fc6" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="PortalModel.portal_city" PointX="5.25" PointY="23.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.portal_country" PointX="0.75" PointY="10.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.portal_experience" PointX="8.25" PointY="12.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.portal_experise" PointX="2.75" PointY="3.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.portal_recruiter_profile" PointX="10.5" PointY="15.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.portal_role" PointX="10.5" PointY="12.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.portal_state" PointX="3" PointY="17.375" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.portal_user" PointX="7.5" PointY="15.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.portal_user_role_mapping" PointX="12.75" PointY="17.375" Width="1.5" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_city_portal_state" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_recruiter_profile_portal_city" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_user_portal_city" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_recruiter_profile_portal_country" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_state_portal_country" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_user_portal_country" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_experience_portal_city" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_recruiter_profile_portal_state" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_user_role_portal_role" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_user_portal_state" />
+        <AssociationConnector ManuallyRouted="false" Association="PortalModel.FK_portal_user_role_portal_user" />
+        <EntityTypeShape EntityType="PortalModel.portal_for_interested_Candidate" PointX="15.75" PointY="16.875" Width="1.5" />
+        <AssociationConnector Association="PortalModel.FK_portal_interested_candidate_portal_user" />
+        <AssociationConnector Association="PortalModel.FK_portal_interested_candidate_portal_recruiter_profile" />
+        <EntityTypeShape EntityType="PortalModel.portal_post_requirement" PointX="9.75" PointY="22.375" Width="1.5" />
+        <EntityTypeShape EntityType="PortalModel.portal_requirement_vendor_mapping" PointX="2.75" PointY="0.75" Width="1.5" />
+        <AssociationConnector Association="PortalModel.FK_portal_post_requirement_portal_user" />
+        <EntityTypeShape EntityType="PortalModel.portal_what_client_says" PointX="0.75" PointY="0.75" Width="1.5" />
+        <EntityTypeShape EntityType="PortalModel.portal_plan" Width="1.875" PointX="5.375" PointY="1.875" />
+        <EntityTypeShape EntityType="PortalModel.portal_vendor_price_plan" Width="1.5" PointX="5.375" PointY="5.75" />
+        <EntityTypeShape EntityType="PortalModel.portal_user_candidate_info" Width="1.5" PointX="9.75" PointY="8" />
+        <AssociationConnector Association="PortalModel.FK_portal_user_portal_candidate" />
+        <EntityTypeShape EntityType="PortalModel.portal_vendor_plan_mapping" Width="1.5" PointX="12.875" PointY="10.375" />
+        <AssociationConnector Association="PortalModel.FK_portal_vendor_plan_mapping_portal_user" />
+        <EntityTypeShape EntityType="PortalModel.portal_vendor_lead_access_mapping" Width="1.5" PointX="9.75" PointY="33.75" />
+        <AssociationConnector Association="PortalModel.FK_portal_vendor_lead_access_mapping_portal_user" />
+        <EntityTypeShape EntityType="PortalModel.portal_candidate_plan" Width="1.5" PointX="8" PointY="27.875" />
+        <AssociationConnector Association="PortalModel.FK_portal_candidate_plan_portal_plan" />
+        <EntityTypeShape EntityType="PortalModel.portal_vendor_plan" Width="1.5" PointX="12.75" PointY="3.375" />
+        <AssociationConnector Association="PortalModel.FK_portal_vendor_plan_portal_plan" />
+        <AssociationConnector Association="PortalModel.FK_portal_vendor_plan_portal_role" />
+        <AssociationConnector Association="PortalModel.FK_portal_vendor_plan_mapping_portal_vendor_plan" />
+        <EntityTypeShape EntityType="PortalModel.portal_userplan_mapping" Width="1.5" PointX="16" PointY="11.625" />
+        <AssociationConnector Association="PortalModel.FK_portal_user_id" />
+        <AssociationConnector Association="PortalModel.FK_portal_plan_id" />
+        <EntityTypeShape EntityType="PortalModel.portal_plan_duration_left" Width="1.5" PointX="19" PointY="10.125" />
+        <AssociationConnector Association="PortalModel.FK__portal_pl__porta__73BA3083" />
+        <AssociationConnector Association="PortalModel.fk__portal_user_id" />
+        <AssociationConnector Association="PortalModel.FK_portal_plan_duration_left_role" />
+        <AssociationConnector Association="PortalModel.fk_portal_userplan_id" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

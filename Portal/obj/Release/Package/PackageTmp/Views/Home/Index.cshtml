@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Codelate";
+    Layout = "~/Views/Shared/_WebsiteLayout.cshtml";
+}
+@* Load CSS *@
+<link href="~/Content/WebsiteStyle.css" rel="stylesheet" />
+<style>
+      .rondell-instance-1 {
+        width: 572px !important;
+        height: 300px !important;
+        margin: 0 auto !important;
+    }
+
+   
+    .rondell-control{
+        display:none !important;
+    }
+</style>
+<input type="hidden" id="hidden_current_user" />
+
+@if(!string.IsNullOrEmpty(ViewBag.title) && (!string.IsNullOrEmpty(ViewBag.locality) || !string.IsNullOrEmpty(ViewBag.locality)))
+{
+
+}
+<div class="" id="show_candidate_profile"></div>
+<div class="">
+    <div class="col-md-10 col-md-offset-1" >
+        @Html.Action("OurBenefits", "Home")
+    </div>
+    <div class="col-md-12">
+        @Html.Action("ProcessStep", "Home")
+    </div>
+</div>
+@*<div id="append_what_client_says">
+
+</div>*@
+@Html.Action("WhatClientSays", "Home")
+
+
+
+@Html.Partial("~/Views/Shared/_InterestedForCandidate.cshtml")
+@*<script src="~/scripts/HomePageSearch/choices.js"></script>
+<script src="~/scripts/HomePageSearch/custom-materialize.js"></script>*@
+

@@ -1,0 +1,242 @@
+E:\Anish Work\Portal\Portal\bin\ApplicationInsights.config
+E:\Anish Work\Portal\Portal\bin\Portal.dll.config
+E:\Anish Work\Portal\Portal\bin\Portal.dll
+E:\Anish Work\Portal\Portal\bin\Portal.pdb
+E:\Anish Work\Portal\Portal\bin\Antlr3.Runtime.dll
+E:\Anish Work\Portal\Portal\bin\DataTables.Mvc.dll
+E:\Anish Work\Portal\Portal\bin\DocumentFormat.OpenXml.dll
+E:\Anish Work\Portal\Portal\bin\dotless.Core.dll
+E:\Anish Work\Portal\Portal\bin\EntityFramework.dll
+E:\Anish Work\Portal\Portal\bin\EntityFramework.SqlServer.dll
+E:\Anish Work\Portal\Portal\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Anish Work\Portal\Portal\bin\Microsoft.AI.DependencyCollector.dll
+E:\Anish Work\Portal\Portal\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Anish Work\Portal\Portal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Anish Work\Portal\Portal\bin\Microsoft.AI.Web.dll
+E:\Anish Work\Portal\Portal\bin\Microsoft.AI.WindowsServer.dll
+E:\Anish Work\Portal\Portal\bin\Microsoft.ApplicationInsights.dll
+E:\Anish Work\Portal\Portal\bin\Microsoft.Web.Infrastructure.dll
+E:\Anish Work\Portal\Portal\bin\Newtonsoft.Json.dll
+E:\Anish Work\Portal\Portal\bin\System.Net.Http.Formatting.dll
+E:\Anish Work\Portal\Portal\bin\System.Web.Helpers.dll
+E:\Anish Work\Portal\Portal\bin\System.Web.Http.dll
+E:\Anish Work\Portal\Portal\bin\System.Web.Http.WebHost.dll
+E:\Anish Work\Portal\Portal\bin\System.Web.Mvc.dll
+E:\Anish Work\Portal\Portal\bin\System.Web.Optimization.dll
+E:\Anish Work\Portal\Portal\bin\System.Web.Optimization.Less.dll
+E:\Anish Work\Portal\Portal\bin\System.Web.Razor.dll
+E:\Anish Work\Portal\Portal\bin\System.Web.Webpages.Deployment.dll
+E:\Anish Work\Portal\Portal\bin\System.Web.Webpages.dll
+E:\Anish Work\Portal\Portal\bin\System.Web.Webpages.Razor.dll
+E:\Anish Work\Portal\Portal\bin\WebGrease.dll
+E:\Anish Work\Portal\Portal\bin\Antlr3.Runtime.pdb
+E:\Anish Work\Portal\Portal\bin\DocumentFormat.OpenXml.xml
+E:\Anish Work\Portal\Portal\bin\EntityFramework.xml
+E:\Anish Work\Portal\Portal\bin\EntityFramework.SqlServer.xml
+E:\Anish Work\Portal\Portal\bin\Microsoft.AI.DependencyCollector.xml
+E:\Anish Work\Portal\Portal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Anish Work\Portal\Portal\bin\Microsoft.AI.Web.xml
+E:\Anish Work\Portal\Portal\bin\Microsoft.AI.WindowsServer.xml
+E:\Anish Work\Portal\Portal\bin\Microsoft.ApplicationInsights.xml
+E:\Anish Work\Portal\Portal\bin\System.Web.Optimization.xml
+E:\Anish Work\Portal\Portal\bin\System.Web.Optimization.Less.pdb
+E:\Anish Work\Portal\Portal\bin\System.Web.Optimization.Less.xml
+E:\Anish Work\Portal\Portal\bin\System.Web.Razor.xml
+E:\Anish Work\Portal\Portal\bin\System.Web.Webpages.xml
+E:\Anish Work\Portal\Portal\bin\System.Web.Webpages.Deployment.xml
+E:\Anish Work\Portal\Portal\bin\System.Web.Webpages.Razor.xml
+E:\Anish Work\Portal\Portal\bin\System.Web.Helpers.xml
+E:\Anish Work\Portal\Portal\bin\System.Web.Mvc.xml
+E:\Anish Work\Portal\Portal\bin\Newtonsoft.Json.xml
+E:\Anish Work\Portal\Portal\bin\System.Net.Http.Formatting.xml
+E:\Anish Work\Portal\Portal\bin\System.Web.Http.xml
+E:\Anish Work\Portal\Portal\bin\System.Web.Http.WebHost.xml
+E:\Anish Work\Portal\Portal\obj\Debug\Portal.csproj.CoreCompileInputs.cache
+E:\Anish Work\Portal\Portal\obj\Debug\Portal.csproj.CopyComplete
+E:\Anish Work\Portal\Portal\obj\Debug\Portal.dll
+E:\Anish Work\Portal\Portal\obj\Debug\Portal.pdb
+E:\Anish Work\Portal\Portal\obj\Debug\Portal.csprojAssemblyReference.cache
+D:\CodeLate\codelate\Portal\bin\ApplicationInsights.config
+D:\CodeLate\codelate\Portal\bin\Portal.dll.config
+D:\CodeLate\codelate\Portal\bin\Portal.dll
+D:\CodeLate\codelate\Portal\bin\Portal.pdb
+D:\CodeLate\codelate\Portal\bin\Antlr3.Runtime.dll
+D:\CodeLate\codelate\Portal\bin\DataTables.Mvc.dll
+D:\CodeLate\codelate\Portal\bin\DocumentFormat.OpenXml.dll
+D:\CodeLate\codelate\Portal\bin\dotless.Core.dll
+D:\CodeLate\codelate\Portal\bin\EntityFramework.dll
+D:\CodeLate\codelate\Portal\bin\EntityFramework.SqlServer.dll
+D:\CodeLate\codelate\Portal\bin\Microsoft.AI.Agent.Intercept.dll
+D:\CodeLate\codelate\Portal\bin\Microsoft.AI.DependencyCollector.dll
+D:\CodeLate\codelate\Portal\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\CodeLate\codelate\Portal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\CodeLate\codelate\Portal\bin\Microsoft.AI.Web.dll
+D:\CodeLate\codelate\Portal\bin\Microsoft.AI.WindowsServer.dll
+D:\CodeLate\codelate\Portal\bin\Microsoft.ApplicationInsights.dll
+D:\CodeLate\codelate\Portal\bin\Microsoft.Web.Infrastructure.dll
+D:\CodeLate\codelate\Portal\bin\Newtonsoft.Json.dll
+D:\CodeLate\codelate\Portal\bin\System.Net.Http.Formatting.dll
+D:\CodeLate\codelate\Portal\bin\System.Web.Helpers.dll
+D:\CodeLate\codelate\Portal\bin\System.Web.Http.dll
+D:\CodeLate\codelate\Portal\bin\System.Web.Http.WebHost.dll
+D:\CodeLate\codelate\Portal\bin\System.Web.Mvc.dll
+D:\CodeLate\codelate\Portal\bin\System.Web.Optimization.dll
+D:\CodeLate\codelate\Portal\bin\System.Web.Optimization.Less.dll
+D:\CodeLate\codelate\Portal\bin\System.Web.Razor.dll
+D:\CodeLate\codelate\Portal\bin\System.Web.Webpages.Deployment.dll
+D:\CodeLate\codelate\Portal\bin\System.Web.Webpages.dll
+D:\CodeLate\codelate\Portal\bin\System.Web.Webpages.Razor.dll
+D:\CodeLate\codelate\Portal\bin\WebGrease.dll
+D:\CodeLate\codelate\Portal\bin\Antlr3.Runtime.pdb
+D:\CodeLate\codelate\Portal\bin\DocumentFormat.OpenXml.xml
+D:\CodeLate\codelate\Portal\bin\EntityFramework.xml
+D:\CodeLate\codelate\Portal\bin\EntityFramework.SqlServer.xml
+D:\CodeLate\codelate\Portal\bin\Microsoft.AI.DependencyCollector.xml
+D:\CodeLate\codelate\Portal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\CodeLate\codelate\Portal\bin\Microsoft.AI.Web.xml
+D:\CodeLate\codelate\Portal\bin\Microsoft.AI.WindowsServer.xml
+D:\CodeLate\codelate\Portal\bin\Microsoft.ApplicationInsights.xml
+D:\CodeLate\codelate\Portal\bin\System.Web.Optimization.xml
+D:\CodeLate\codelate\Portal\bin\System.Web.Optimization.Less.pdb
+D:\CodeLate\codelate\Portal\bin\System.Web.Optimization.Less.xml
+D:\CodeLate\codelate\Portal\bin\System.Web.Razor.xml
+D:\CodeLate\codelate\Portal\bin\System.Web.Webpages.xml
+D:\CodeLate\codelate\Portal\bin\System.Web.Webpages.Deployment.xml
+D:\CodeLate\codelate\Portal\bin\System.Web.Webpages.Razor.xml
+D:\CodeLate\codelate\Portal\bin\System.Web.Helpers.xml
+D:\CodeLate\codelate\Portal\bin\System.Web.Mvc.xml
+D:\CodeLate\codelate\Portal\bin\Newtonsoft.Json.xml
+D:\CodeLate\codelate\Portal\bin\System.Net.Http.Formatting.xml
+D:\CodeLate\codelate\Portal\bin\System.Web.Http.xml
+D:\CodeLate\codelate\Portal\bin\System.Web.Http.WebHost.xml
+D:\CodeLate\codelate\Portal\obj\Debug\Portal.csproj.CoreCompileInputs.cache
+D:\CodeLate\codelate\Portal\obj\Debug\Portal.csproj.CopyComplete
+D:\CodeLate\codelate\Portal\obj\Debug\Portal.dll
+D:\CodeLate\codelate\Portal\obj\Debug\Portal.pdb
+D:\CodeLate\codelate\Portal\obj\Debug\Portal.csprojAssemblyReference.cache
+E:\Anish Work\Portal\Portal\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+E:\Anish Work\Portal\Portal\bin\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+E:\Anish Work\Portal\Portal\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\ApplicationInsights.config
+C:\Users\Public\P\codelate\codelate\Portal\bin\Portal.dll.config
+C:\Users\Public\P\codelate\codelate\Portal\bin\Portal.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Portal.pdb
+C:\Users\Public\P\codelate\codelate\Portal\bin\Antlr3.Runtime.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\DataTables.Mvc.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\DocumentFormat.OpenXml.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\dotless.Core.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\EntityFramework.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\EntityFramework.SqlServer.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\log4net.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.AI.Web.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.Data.Tools.Components.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Newtonsoft.Json.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Net.Http.Formatting.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Helpers.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Http.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Http.WebHost.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Mvc.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Optimization.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Optimization.Less.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Razor.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Webpages.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Webpages.Razor.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\WebGrease.dll
+C:\Users\Public\P\codelate\codelate\Portal\bin\Antlr3.Runtime.pdb
+C:\Users\Public\P\codelate\codelate\Portal\bin\DocumentFormat.OpenXml.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\EntityFramework.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\EntityFramework.SqlServer.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\log4net.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.AI.Web.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Optimization.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Optimization.Less.pdb
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Optimization.Less.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Razor.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Webpages.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Webpages.Razor.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Helpers.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Mvc.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\Newtonsoft.Json.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Net.Http.Formatting.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Http.xml
+C:\Users\Public\P\codelate\codelate\Portal\bin\System.Web.Http.WebHost.xml
+C:\Users\Public\P\codelate\codelate\Portal\obj\Debug\Portal.csprojAssemblyReference.cache
+C:\Users\Public\P\codelate\codelate\Portal\obj\Debug\Portal.csproj.CopyComplete
+C:\Users\Public\P\codelate\codelate\Portal\obj\Debug\Portal.dll
+C:\Users\Public\P\codelate\codelate\Portal\obj\Debug\Portal.pdb
+D:\codelate\Portal\bin\ApplicationInsights.config
+D:\codelate\Portal\bin\Portal.dll.config
+D:\codelate\Portal\bin\Portal.dll
+D:\codelate\Portal\bin\Portal.pdb
+D:\codelate\Portal\bin\Antlr3.Runtime.dll
+D:\codelate\Portal\bin\DataTables.Mvc.dll
+D:\codelate\Portal\bin\DocumentFormat.OpenXml.dll
+D:\codelate\Portal\bin\dotless.Core.dll
+D:\codelate\Portal\bin\EntityFramework.dll
+D:\codelate\Portal\bin\EntityFramework.SqlServer.dll
+D:\codelate\Portal\bin\log4net.dll
+D:\codelate\Portal\bin\Microsoft.AI.Agent.Intercept.dll
+D:\codelate\Portal\bin\Microsoft.AI.DependencyCollector.dll
+D:\codelate\Portal\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\codelate\Portal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\codelate\Portal\bin\Microsoft.AI.Web.dll
+D:\codelate\Portal\bin\Microsoft.AI.WindowsServer.dll
+D:\codelate\Portal\bin\Microsoft.ApplicationInsights.dll
+D:\codelate\Portal\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+D:\codelate\Portal\bin\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+D:\codelate\Portal\bin\Microsoft.Web.Infrastructure.dll
+D:\codelate\Portal\bin\Newtonsoft.Json.dll
+D:\codelate\Portal\bin\System.Net.Http.Formatting.dll
+D:\codelate\Portal\bin\System.Web.Helpers.dll
+D:\codelate\Portal\bin\System.Web.Http.dll
+D:\codelate\Portal\bin\System.Web.Http.WebHost.dll
+D:\codelate\Portal\bin\System.Web.Mvc.dll
+D:\codelate\Portal\bin\System.Web.Optimization.dll
+D:\codelate\Portal\bin\System.Web.Optimization.Less.dll
+D:\codelate\Portal\bin\System.Web.Razor.dll
+D:\codelate\Portal\bin\System.Web.Webpages.Deployment.dll
+D:\codelate\Portal\bin\System.Web.Webpages.dll
+D:\codelate\Portal\bin\System.Web.Webpages.Razor.dll
+D:\codelate\Portal\bin\WebGrease.dll
+D:\codelate\Portal\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\codelate\Portal\bin\Antlr3.Runtime.pdb
+D:\codelate\Portal\bin\DocumentFormat.OpenXml.xml
+D:\codelate\Portal\bin\EntityFramework.xml
+D:\codelate\Portal\bin\EntityFramework.SqlServer.xml
+D:\codelate\Portal\bin\log4net.xml
+D:\codelate\Portal\bin\Microsoft.AI.DependencyCollector.xml
+D:\codelate\Portal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\codelate\Portal\bin\Microsoft.AI.Web.xml
+D:\codelate\Portal\bin\Microsoft.AI.WindowsServer.xml
+D:\codelate\Portal\bin\Microsoft.ApplicationInsights.xml
+D:\codelate\Portal\bin\System.Web.Optimization.xml
+D:\codelate\Portal\bin\System.Web.Optimization.Less.pdb
+D:\codelate\Portal\bin\System.Web.Optimization.Less.xml
+D:\codelate\Portal\bin\System.Web.Razor.xml
+D:\codelate\Portal\bin\System.Web.Webpages.xml
+D:\codelate\Portal\bin\System.Web.Webpages.Deployment.xml
+D:\codelate\Portal\bin\System.Web.Webpages.Razor.xml
+D:\codelate\Portal\bin\System.Web.Helpers.xml
+D:\codelate\Portal\bin\System.Web.Mvc.xml
+D:\codelate\Portal\bin\Newtonsoft.Json.xml
+D:\codelate\Portal\bin\System.Net.Http.Formatting.xml
+D:\codelate\Portal\bin\System.Web.Http.xml
+D:\codelate\Portal\bin\System.Web.Http.WebHost.xml
+D:\codelate\Portal\obj\Debug\Portal.csprojAssemblyReference.cache
+D:\codelate\Portal\obj\Debug\Portal.csproj.CoreCompileInputs.cache
+D:\codelate\Portal\obj\Debug\Portal.csproj.CopyComplete
+D:\codelate\Portal\obj\Debug\Portal.dll
+D:\codelate\Portal\obj\Debug\Portal.pdb

@@ -1,0 +1,142 @@
+﻿@model List<Portal.ViewModels.PostYourRequirement>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+@{
+    ViewBag.Title = "Sent Interests For Particular Candidate";
+    Layout = "~/Areas/Client/Views/Shared/_ClientLayout.cshtml";
+}
+
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+
+<div class="" id="change_status_div" style="display:none">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default" id="approv_reject_panel" style="">
+                <div class="panel-heading">Post Requirement Details</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <input type="hidden" id="hidden_post_requirement_id" />
+                        <div class="form-group col-md-12 col-xs-12" style="">
+                            <div class="alert alert-info" style="background-color: #d9edf7;color: #31708f;border-color: #bce8f1;">
+                                <strong>Info!</strong> You have Selected Post #<span id="post_requirement_no"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="">
+                        <div class="form-group col-md-6  col-xs-12">
+                            <label for="example-email" class="">Status</label>
+                            <select id="posted_requirement_status" class="form-control form-control-line" onchange="">
+                                <option value="">Select Status</option>
+                                <option value="3">Hold</option>
+                                <option value="4">Closed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" style="">
+                        <div class="form-group col-md-12  col-xs-12">
+                            <label for="example-email" class="">Remarks</label>
+                           <textarea class="form-control form-control-line" rows="4" id="client_reason"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <button type="button" class="btn btn-secondary pull-right" onclick="ClientUserRequirment.CloseRequirementStatus()">Close</button>
+                    <button type="button" class="btn btn-primary pull-right" onclick="ClientUserRequirment.ChangeRequirementStatus()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model != null && Model.Count > 0)
+{
+    int temp_count_var = 1;
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th><center>Sr.no</center></th>
+                    <th><center>Posted Date</center></th>
+                    <th><center>Subject</center></th>
+                    <th><center>Requirement Title</center></th>
+                    <th><center>Description</center></th>
+                    <th><center>Codelate Remark</center></th>
+                    <th><center>Client Remark</center></th>
+                    <th><center>Status</center></th>
+                    <th><center>Action</center></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@(temp_count_var++)</td>
+                        <td>@item.added_datetime</td>
+                        <td>@item.subject</td>
+                        <td>@item.requirement_title</td>
+                        <td>@item.message</td>
+                        <td>@item.status_reason</td>
+                        <td>@item.client_reason</td>
+                        <td>
+                            @if (item.status == 0)
+                            {
+                                <span style="background-color: #ffc107;" class="badge badge-warning">Pending</span>
+                            }
+                            else if (item.status == 1)
+                            {
+                                <span style="background-color: #28a745" class="badge badge-success">Approved</span>
+                            }
+                            else if (item.status == 2)
+                            {
+                                <span style="background-color: #dc3545;" class="badge badge-danger">Rejected</span>
+                            }
+                            else if (item.status == 3)
+                            {
+                                <span style="background-color: #5a5858;" class="badge badge-success">Hold</span>
+                            }
+                            else if (item.status == 4)
+                            {
+                                <span style="background-color: #b7ca08;" class="badge badge-success">Closed</span>
+                            }
+                        </td>
+                        <td class="" style="margin:0px auto;">
+                            <a style="color:darkblue" title="Edit" class="fa fa-edit" aria-hidden="true" href="#" onclick="ClientUserRequirment.ShowChangeStatusSection(@item.post_id)"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-plan-box;
+        padding: 5px;
+    }
+</style>
+
+<script src="~/Areas/Client/Scripts/Modules/ClientUserRequirement.js"></script>

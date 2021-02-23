@@ -1,0 +1,91 @@
+﻿@model List<Portal.ViewModels.WhatClientSays>
+@{
+    ViewBag.Title = "What Clients Says!";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" onclick='Admin.OpenWhatsSayModal()' class="btn btn-primary pull-right">Add Feedback</button>
+    </div>
+</div>
+@Html.Partial("~/Views/Shared/_WhatClientSays.cshtml")
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="table_what_client_says">
+            <thead>
+                <tr>
+                    <th><center>ID</center></th>
+                    <th><center>Title</center></th>
+                    <th><center>Client Name</center></th>
+                    <th><center>Description</center></th>
+                    <th><center>Added Datetime</center></th>
+                    <th><center>Is published</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.id</td>
+                        <td>@(item.title)</td>
+                        <td>@item.client_name</td>
+                        <td>@item.description</td>
+                        <td>@item.added_datetime</td>
+
+                        @if (item.is_published)
+                        {
+                            <td>Published</td>
+                        }
+                        else
+                        {
+                            <td>  </td>
+                        }
+
+                        <td class="" style="margin:0px auto;">
+                            <a style="color:darkblue" title="Edit" class="fa fa-edit" aria-hidden="true" href="#" onclick="Admin.GetWhatsClientSaysByID(@item.id)"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+<script>
+    $(function () {
+        $("#client_profile_image").change(function () {
+            var data = new FormData();
+            var files = $("#client_profile_image").get(0).files;
+            if (files.length > 0) {
+                data.append("Files", files[0]);
+            }
+            $.ajax({
+                url: "/UploadHandler/UploadFile",
+                type: "POST",
+                processData: false,
+                contentType: false,
+                data: data,
+                success: function (response) {
+                    debugger;
+                    //code after success
+                    $("#client_image_preview").attr('src', "../../Assets/Images/" + response);
+                    $('#hidden_client_pic').val(response);
+                },
+                error: function (er) {
+                    alert(er);
+                }
+
+            });
+        });
+    })
+
+    $(function () {
+        $('#table_what_client_says').DataTable();
+    });
+</script>

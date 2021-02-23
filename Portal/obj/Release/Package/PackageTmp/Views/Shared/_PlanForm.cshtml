@@ -1,0 +1,39 @@
+﻿
+<div class="modal fade" id="plan_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Default Modal</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <form class="form-horizontal form-material">
+                        <input type="hidden" id="hidden_pk_plan_id" />
+                        <div class="form-group col-md-12  col-xs-12">
+                            <label class="col-md-12 col-xs-12">Plan Name</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" placeholder="Plan Name" class="form-control form-control-line" id="plan_type_name">
+                            </div>
+                        </div>
+                        <div class="form-check-input col-md-12  col-xs-12" style="">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="plan_type_active" type="checkbox" checked> Is Active
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="AdminPlans.AddUpdatePlanType()">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

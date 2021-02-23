@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="" id="user_profile_add_section" hidden>
+    @Html.Partial("~/Views/Shared/_UserProfileForm.cshtml");
+</div>
+
+<div id="user_list_div">
+
+</div>
+
+<script>
+    $(function () {
+        Admin.OnAddUser();
+        Admin.LoadUserList();
+        $('#hidden_user_type').val('admin');
+
+    });
+</script>

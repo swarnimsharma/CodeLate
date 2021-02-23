@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "";
+    Layout = "~/Areas/Vendor/Views/Shared/_VendorLayout.cshtml";
+}
+
+<style>
+.preview {
+        padding: 10px;
+        position: relative;
+    }
+
+        .preview i {
+            color: white;
+            font-size: 35px;
+            transform: translate(50px,130px);
+        }
+
+    .preview-img {
+        border-radius: 100%;
+        box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.7);
+    }
+
+    .browse-button {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        position: absolute; /* Tweak the position property if the element seems to be unfit */
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, transparent, black);
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+        .browse-button:hover {
+            opacity: 1;
+        }
+
+    .browse-input {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        transform: translate(-1px,-26px);
+        opacity: 0;
+    }
+</style>
+<div class="row" style="margin-bottom:5px !important">
+    <div class="col-md-3">
+        <input type="text" class="form-control" id="candidate_name_search" name="name" placeholder="Candidate Name">
+    </div>
+    <div class="col-md-3">
+        <input type="text" class="form-control" id="candidate_technology_search" name="email" placeholder="Technology">
+    </div>
+    <div class="col-md-3">
+        <select id="candidate_experience_search" class="form-control form-control-line">
+            <option value="">Select Experience</option>
+            <option value="L1">0-2 (L1)</option>
+            <option value="L2">2-4 (L2)</option>
+            <option value="L3">4-6 (L3)</option>
+            <option value="L4">6-8 (L4)</option>
+            <option value="Expert">N/A (Expert)</option>
+        </select>
+    </div>
+    <div class="col-md-1">
+        <button type="button" onclick="Candidate.LoadCandidateList()" class="btn btn-primary pull-right">Search</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" onclick="Candidate.OpenCandidateModal(0)" class="btn btn-primary pull-right">Add Candidate</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="divLoading">
+        </div>
+        <div class="" id="append_candidate_list">
+
+        </div>
+        @*@Html.Action("GetRecruitersList", "Recruiter")*@
+    </div>
+</div>
+@Html.Partial("~/Views/Shared/_CandidateProfileForm.cshtml")
+
+<script src="~/Areas/Vendor/Scripts/Modules/Candidate.js"></script>
+<script>
+    $(function () {
+        Candidate.LoadCandidateList();
+        $("#candidate_profile_image").change(function () {
+            var data = new FormData();
+            var files = $("#candidate_profile_image").get(0).files;
+            if (files.length > 0) {
+                data.append("Files", files[0]);
+            }
+            $.ajax({
+                url: "/UploadHandler/UploadFile",
+                type: "POST",
+                processData: false,
+                contentType: false,
+                data: data,
+                success: function (response) {
+                    debugger;
+                    //code after success
+                    $("#profile_image_preview").attr('src', "../../Assets/Images/" + response);
+                    $('#hidden_candidate_pic').val(response);
+                },
+                error: function (er) {
+                    alert(er);
+                }
+
+            });
+        });
+    });
+</script>

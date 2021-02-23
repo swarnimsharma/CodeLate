@@ -1,0 +1,168 @@
+﻿@model List<Portal.ViewModels.InterestedToCandidateViewModel>
+@using Portal.Common;
+@{
+    Layout = "~/Areas/Vendor/Views/Shared/_VendorLayout.cshtml";
+    var count = 0;
+}
+
+<style>
+        .table th {
+            background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        }
+
+        .table th {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .table tr {
+            text-align: center;
+        }
+
+        #team .card {
+            border: none;
+            background: #ffffff;
+        }
+
+        . /*image-flip:hover .backside,
+    .image-flip.hover .backside {
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        border-radius: .25rem;
+    }
+
+    .image-flip:hover .frontside,
+    .image-flip.hover .frontside {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }*/
+        /*.mainflip {
+        -webkit-transition: 1s;
+        -webkit-transform-style: preserve-3d;
+        -ms-transition: 1s;
+        -moz-transition: 1s;
+        -moz-transform: perspective(1000px);
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transition: 1s;
+        transform-style: preserve-3d;
+        position: relative;
+    }*/
+        .frontside {
+            position: relative;
+            -webkit-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+
+        /*.backside {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        -webkit-plan-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        -moz-plan-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        plan-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    }*/
+
+        .frontside,
+        .backside {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: 1s;
+            -webkit-transform-style: preserve-3d;
+            -moz-transition: 1s;
+            -moz-transform-style: preserve-3d;
+            -o-transition: 1s;
+            -o-transform-style: preserve-3d;
+            -ms-transition: 1s;
+            -ms-transform-style: preserve-3d;
+            transition: 1s;
+            transform-style: preserve-3d;
+        }
+
+            .frontside .card,
+            .backside .card {
+                min-height: 312px;
+            }
+
+                .backside .card a {
+                    font-size: 18px;
+                    color: #007b5e !important;
+                }
+
+                .frontside .card .card-title,
+                .backside .card .card-title {
+                    color: #007b5e !important;
+                }
+
+                .frontside .card .card-body img {
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                }
+</style>
+<input type="hidden" id="hidden_candidate_id" />
+
+<div class="" id="interested_user_section">
+
+</div>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th><center>Sr No.</center></th>
+                    <th><center>Requirement Title</center></th>
+                    <th><center>Requested Date</center></th>
+                    <th><center>Candidate</center></th>
+                    <th><center>Over All Request</center></th>
+                    @if (Convert.ToBoolean(Session[SessionKey.CurrentUserPremium]))
+                    {
+                        <th><center>Action</center></th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count = (count + 1);
+                    <tr class="success">
+                        <td>@(count)</td>
+                        <td>@item.requirement_title</td>
+                        <td>@item.requested_date</td>
+                        <td>@item.candidate_name</td>
+                        <td>@item.no_of_request</td>
+                        @if (Convert.ToBoolean(Session[SessionKey.CurrentUserPremium]))
+                        {
+                            <td>
+                                <button type="button" onclick="Candidate.ShowInterestedUserDetail(@item.fk_user_id)" class="btn btn-primary">View Details</button>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+<script src="~/Areas/Vendor/Scripts/Modules/Candidate.js"></script>

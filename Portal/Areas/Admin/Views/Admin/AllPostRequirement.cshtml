@@ -1,0 +1,105 @@
+﻿@model List<Portal.ViewModels.PostYourRequirement>
+@{
+    ViewBag.Title = "AllPostRequirement";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.js"></script>
+<style>
+    .btn-group {
+        width: 100% !important;
+    }
+
+    .dropdown-toggle {
+        width: 100% !important;
+    }
+
+    .multiselect-selected-text {
+        float: left;
+        width: 100% !important;
+        text-align: left;
+    }
+
+    #post_requirement_vendors .btn-group button .multiselect-selected-text {
+        width: 100%;
+        text-align: left !important;
+        float: left;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+
+    @Html.Partial("~/Views/Shared/_ApprovedPostRequirement.cshtml")
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="table_post_requirement">
+            <thead>
+                <tr>
+                    <th><center>ID</center></th>
+                    <th><center>Title</center></th>
+                    <th><center>Subject</center></th>
+                    <th><center>Name</center></th>
+                    <th><center>Contact</center></th>
+                    <th><center>Email</center></th>
+                    <th><center>Added Date</center></th>
+                    <th><center>Status</center></th>
+                    <th><center>Message</center></th>
+                    <th><center>Action</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.post_id</td>
+                        <td>@item.requirement_title</td>
+                        <td>@item.subject</td>
+                        <td>@item.fullname</td>
+                        <td>@item.mobile_no</td>
+                        <td>@item.email_id</td>
+                        <td>@item.added_datetime</td>
+                        <td>
+                            @if (item.status == 0)
+                            {
+                                <span style="background-color: #ffc107;" class="badge badge-warning">Pending</span>
+                            }
+                            else if (item.status == 1)
+                            {
+                                <span style="background-color: #28a745" class="badge badge-success">Approved</span>
+                            }
+                            else
+                            {
+                                <span style="background-color: #dc3545;" class="badge badge-danger">Rejected</span>
+                            }
+                        </td>
+
+                        <td>@item.message</td>
+                        <td class="" style="margin:0px auto;">
+                            <a style="color:darkblue" title="Edit" class="fa fa-edit" aria-hidden="true" href="#" onclick="Admin.OpenPostApprovedModal(@item.post_id)"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(function () {
+        System.LoadDropDown('vendor_dropdown', 'post_requirement_vendors', null, null);
+
+        $('#table_post_requirement').DataTable();
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-plan-box;
+        padding: 5px;
+    }
+</style>

@@ -1,0 +1,45 @@
+﻿@model List<Portal.ViewModels.CandidateInterestReceivedLimit>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="table_candidate_interest_recieved">
+            <thead>
+                <tr>
+                    <th>plan ID</th>
+                    <th>Plan Name</th>
+                    <th>User Name</th>
+                    <th>Plan Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.pk_candidate_interested_id</td>
+                        <td>@item.requirement_title_select</td>
+                        <td>@item.requirement_title</td>
+                        <td>@item.requested_date</td>
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <section class="content">
+        <div class="error-page">
+            <div class="error-content">
+                <h3><i class="fa fa-warning text-yellow"></i> Oops! There is no record.</h3>
+            </div>
+            <!-- /.error-content -->
+        </div>
+        <!-- /.error-page -->
+    </section>
+    /**/
+}

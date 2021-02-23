@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "CandidateInterestReceived";
+    Layout = "~/Areas/Candidate/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="Interest_recieved_Limit_Tab_div" class="" style="clear:both">
+
+</div>
+
+<script>
+    $(function () {
+        $.ajax({
+            url: "../Candidate/_CandidateInterestReceivedLimit",
+            cache: false,
+            type: "GET",
+            dataType: "html",
+            contentType: 'application/html; charset=utf-8',
+            success: function (result) {
+                $('#Interest_recieved_Limit_Tab_div').html(result);
+            },
+            error: function (err) {
+                //ShowModel("Error", err)
+            },
+            complete: function () {
+                $('#table_candidate_interest_recieved').DataTable();
+            }
+        });
+
+    });
+
+</script>

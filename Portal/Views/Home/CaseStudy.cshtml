@@ -1,0 +1,294 @@
+﻿
+
+@{
+    ViewBag.Title = "Case Studies";
+    Layout = "~/Views/Shared/_WebsiteLayout.cshtml";
+}
+<style>
+    body {
+        background-color: lightgray;
+    }
+
+    .image-career-banner {
+        background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/556962/pexels-photo-556962.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        color: #fff;
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    .image-career-sm-banner {
+        background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/631008/pexels-photo-631008.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        color: #fff;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+*,
+*:after,
+*:before {
+	-webkit-plan-box-sizing: border-plan-box;
+	-moz-plan-box-sizing: border-plan-box;
+	plan-box-sizing: border-plan-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+body {
+	font-family: sans-serif;
+	background: #f6f9fa;
+}
+
+h1 {
+	color: #fffff;
+	text-align: center;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+
+/*Fun begins*/
+.tab_container {
+	margin: 0 auto;
+	position: relative;
+}
+
+input, section {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+label {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  float: left;
+  width: 20%;
+  padding: 1.5em;
+  color: #757575;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5 {
+  display: block;
+  padding: 20px;
+  color: #999;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content h3 {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+.tab_container .tab-content h3  {
+  text-align: center;
+}
+
+.tab_container [id^="tab"]:checked + label {
+  background: #fff;
+  plan-box-shadow: inset 0 3px #0CE;
+}
+
+.tab_container [id^="tab"]:checked + label .fa {
+  color: #0CE;
+}
+
+label .fa {
+  font-size: 1.3em;
+  margin: 0 0.4em 0 0;
+}
+
+/*Media query*/
+@@media only screen and (max-width: 930px) {
+  label span {
+    font-size: 14px;
+  }
+  label .fa {
+    font-size: 14px;
+  }
+}
+
+@@media only screen and (max-width: 768px) {
+  label span {
+    display: none;
+  }
+
+  label .fa {
+    font-size: 16px;
+  }
+
+  .tab_container {
+    width: 98%;
+  }
+}
+
+/*Content Animation*/
+@@keyframes fadeInScale {
+  0% {
+  	transform: scale(0.9);
+  	opacity: 0;
+  }
+  
+  100% {
+  	transform: scale(1);
+  	opacity: 1;
+  }
+}
+
+.backto{background:#039; padding:12px 0; color:#fff}
+.backto a{color:#FFF; text-decoration:none}
+.cards-row{padding-top:40px; padding-bottom:20px; background:#eee}
+.thumbnail{padding:0; border-radius:0; border:none; plan-box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)}
+.thumbnail>img{width:100%; display:block}
+.thumbnail h3{font-size:26px}
+.thumbnail h3,.card-description{margin:0; padding:8px 0; border-bottom:solid 1px #eee; text-align:justify}
+.thumbnail p{padding-top:8px; font-size:20px}
+.thumbnail .btn{border-radius:0; plan-box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12); font-size:20px}
+</style>
+
+<div class="image-career-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="lg-text">Coming Soon</h1>
+                <p class="image-career-para"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="">
+    <h1>Under Construction</h1>
+    <p style="text-align:center !important">Our page is currently undergoing scheduled maintenance. We should be back shortly. Thanks for your patience</p>
+    <br />
+    <br />
+    @*<div class="tab_container">
+        <input id="tab1" type="radio" name="tabs" checked>
+        <label for="tab1"><i class="fa fa-code"></i><span>End User</span></label>
+        <input id="tab2" type="radio" name="tabs">
+        <label for="tab2"><i class="fa fa-pencil-square-o"></i><span>Supplier</span></label>
+        <section id="content1" class="tab-content">
+            <div class="row" style="padding:50px !important">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="https://1.bp.blogspot.com/-aFQ-W_KTFWQ/V6BdtpSUy6I/AAAAAAAAAH4/xD_U-BYItSsNvk1UGfROqLBzzU1h32oXQCLcB/s320/4-diwali-greeting-cards-by-ajay-acharya.jpg" alt="Bootstrap Thumbnail: Beautiful Bootstrap Thumbnail like Material Design Cards">
+                        <div class="caption">
+                            <h3>Customization</h3>
+                            <p class="card-description"><strong>Thumbnail</strong> Customization Example. Here are customized <strong>bootstrap cards</strong>. We just apply some plan-box shadow and remove border radius.</p>
+                            <p  style="text-align:center !important"><a href="#" class="btn btn-primary" role="button">Download</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="https://1.bp.blogspot.com/-aFQ-W_KTFWQ/V6BdtpSUy6I/AAAAAAAAAH4/xD_U-BYItSsNvk1UGfROqLBzzU1h32oXQCLcB/s320/4-diwali-greeting-cards-by-ajay-acharya.jpg" alt="Bootstrap Thumbnail Customization">
+                        <div class="caption">
+                            <h3>Cards Design</h3>
+                            <p class="card-description"><strong>Thumbnail</strong> Customization Example. Here are customized <strong>bootstrap cards</strong>. We just apply some plan-box shadow and remove border radius.</p>
+                            <p  style="text-align:center !important"><a href="#" class="btn btn-primary" role="button">Download</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="https://1.bp.blogspot.com/-aFQ-W_KTFWQ/V6BdtpSUy6I/AAAAAAAAAH4/xD_U-BYItSsNvk1UGfROqLBzzU1h32oXQCLcB/s320/4-diwali-greeting-cards-by-ajay-acharya.jpg" alt="Bootstrap Thumbnail Customization">
+                        <div class="caption">
+                            <h3>Material Design</h3>
+                            <p class="card-description"><strong>Thumbnail</strong> Customization Example. Here are customized <strong>bootstrap cards</strong>. We just apply some plan-box shadow and remove border radius.</p>
+                            <p  style="text-align:center !important"><a href="#" class="btn btn-primary" role="button">Download</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="content2" class="tab-content">
+            <div class="row" style="padding:50px !important">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="https://1.bp.blogspot.com/-aFQ-W_KTFWQ/V6BdtpSUy6I/AAAAAAAAAH4/xD_U-BYItSsNvk1UGfROqLBzzU1h32oXQCLcB/s320/4-diwali-greeting-cards-by-ajay-acharya.jpg" alt="Bootstrap Thumbnail: Beautiful Bootstrap Thumbnail like Material Design Cards">
+                        <div class="caption">
+                            <h3>Thumbnail Customization</h3>
+                            <p class="card-description"><strong>Thumbnail</strong> Customization Example. Here are customized <strong>bootstrap cards</strong>. We just apply some plan-box shadow and remove border radius.</p>
+                            <p  style="text-align:center !important"><a href="#" class="btn btn-primary" role="button">Download</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="https://1.bp.blogspot.com/-aFQ-W_KTFWQ/V6BdtpSUy6I/AAAAAAAAAH4/xD_U-BYItSsNvk1UGfROqLBzzU1h32oXQCLcB/s320/4-diwali-greeting-cards-by-ajay-acharya.jpg" alt="Bootstrap Thumbnail Customization">
+                        <div class="caption">
+                            <h3>Cards Design</h3>
+                            <p class="card-description"><strong>Thumbnail</strong> Customization Example. Here are customized <strong>bootstrap cards</strong>. We just apply some plan-box shadow and remove border radius.</p>
+                            <p  style="text-align:center !important"><a href="#"  class="btn btn-primary" role="button">Download</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="https://1.bp.blogspot.com/-aFQ-W_KTFWQ/V6BdtpSUy6I/AAAAAAAAAH4/xD_U-BYItSsNvk1UGfROqLBzzU1h32oXQCLcB/s320/4-diwali-greeting-cards-by-ajay-acharya.jpg" alt="Bootstrap Thumbnail Customization">
+                        <div class="caption">
+                            <h3>Material Design</h3>
+                            <p class="card-description"><strong>Thumbnail</strong> Customization Example. Here are customized <strong>bootstrap cards</strong>. We just apply some plan-box shadow and remove border radius.</p>
+                            <p  style="text-align:center !important"><a href="#" class="btn btn-primary center" role="button">Download</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>*@
+</div>
+@*<div class="col-md-12" style="background-image: linear-gradient(to right, #f96c0963 , #ef8f2d);padding:20px;">
+    <h1 class="" style="text-align:center;color:white;font-weight:500;">Do you want to grow us your business ?</h1>
+    <p style="text-align:center !important;"><a href="#contact_form" class="btn btn-primary center" style="background-color:white !important;color:black" role="button">Send Us an Email</a></p>
+</div>*@
+<script>
+    $(function () {
+        $('.banner-area').addClass('hidden');
+        $('.color_animation').removeClass('navactive');
+        $('#nav_casestudy').addClass('navactive');
+    });
+    $(document).on('click', '.panel-heading span.clickable', function (e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+
+        }
+    })
+</script>

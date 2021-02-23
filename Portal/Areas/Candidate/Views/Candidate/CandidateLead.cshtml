@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "CandidateLead";
+    Layout = "~/Areas/Candidate/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CandidateLead</h2>
+
+<div id="divCandidateLead">
+
+</div>
+
+<script>
+      $(function () {
+            //$('#Candidate_plan_modal').modal('show');
+            $.ajax({
+                method: 'GET',
+                url: '../Candidate/CandidateLead',
+                success: function (data) {
+                    $('#divCandidateLead').html(data);
+                }
+            });
+        })
+
+</script>

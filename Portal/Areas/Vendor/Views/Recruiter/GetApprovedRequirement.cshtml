@@ -1,0 +1,128 @@
+﻿
+@{
+    Layout = "~/Areas/Vendor/Views/Shared/_VendorLayout.cshtml";
+}
+
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    #team .card {
+        border: none;
+        background: #ffffff;
+    }
+
+    .frontside {
+        position: relative;
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        z-index: 2;
+        margin-bottom: 30px;
+    }
+
+    /*.backside {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    }*/
+
+    .frontside,
+    .backside {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: 1s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transition: 1s;
+        -moz-transform-style: preserve-3d;
+        -o-transition: 1s;
+        -o-transform-style: preserve-3d;
+        -ms-transition: 1s;
+        -ms-transform-style: preserve-3d;
+        transition: 1s;
+        transform-style: preserve-3d;
+    }
+
+        .frontside .card,
+        .backside .card {
+            min-height: 312px;
+        }
+
+            .backside .card a {
+                font-size: 18px;
+                color: #007b5e !important;
+            }
+
+            .frontside .card .card-title,
+            .backside .card .card-title {
+                color: #007b5e !important;
+            }
+
+            .frontside .card .card-body img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+            }
+</style>
+
+<div class="" id="show_post_details">
+
+</div>
+
+<input type="hidden" id="hidden_candidate_id" />
+
+<div class="row" style="margin-bottom:5px !important">
+    <div class="col-md-3">
+        <select class="form-control" id="lead_requirement_title_search">
+            <option value="">Select Requirement</option>
+            <option value="Project_Outsource">Project Outsource</option>
+            <option value="Offshore">Offshore</option>
+            <option value="Onsite">Onsite</option>
+            <option value="T&amp;M">T&amp;M</option>
+            <option value="Open_Discussion">Open Discussion</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select id="lead_status_search" class="form-control form-control-line">
+            <option value="">Select Status</option>
+            <option value="0">Pending</option>
+            <option value="1">Approved</option>
+            <option value="2">Rejected</option>
+        </select>
+    </div>
+    <div class="col-md-1">
+        <button type="button" onclick="Vendor.GetAllLeads()" class="btn btn-primary pull-right">Search</button>
+    </div>
+</div>
+
+<div id="append_all_leads">
+
+</div>
+
+<script src="~/Areas/Vendor/Scripts/Modules/Candidate.js"></script>
+<script src="~/Areas/Vendor/Scripts/Modules/Vendor.js"></script>
+<script>
+    $(function () {
+        Vendor.GetAllLeads();
+    });
+</script>

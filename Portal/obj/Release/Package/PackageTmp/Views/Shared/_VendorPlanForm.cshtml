@@ -1,0 +1,84 @@
+﻿
+<div class="modal fade" id="vendor_plan_modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Vendor Plan</h4>
+            </div>
+            <div class="modal-body">
+                @* Hidden *@
+                <input type="hidden" id="hidden_pk_vendor_plan_id" />
+                <div class="row">
+                    <form class="form-horizontal form-material">
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label class="col-md-12 col-xs-12">Plan Type</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="vendor_plan_type" class="form-control form-control-line"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Candidate Listing Limit</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" placeholder="Limit" class="form-control form-control-line OnlyNumber" id="vendor_plan_candidate_listing">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label class="col-md-12 col-xs-12">Interest Received Limit</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" placeholder="Limit" class="form-control form-control-line OnlyNumber" name="example-email" id="vendor_plan_interest_received_limit">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Lead Access Limit</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" placeholder="Limit" class="form-control form-control-line OnlyNumber" name="example-email" id="vendor_plan_lead_access_limit">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Technology Limit</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" placeholder="Limit" class="form-control form-control-line OnlyNumber" name="example-email" id="vendor_plan_technology_limit">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Country</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="vendor_plan_country_limit" data-placeholder="Select Country" onchange="AdminPlans.GetSelectedCountries()" multiple="multiple" style="width:100%"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12" style="clear:both">
+                            <label for="example-email" class="col-md-12 col-xs-12">State</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="vendor_plan_state_limit" data-placeholder="Select State" onchange="AdminPlans.GetSelectedStates()" multiple="multiple" style="width:100%"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12" style="">
+                            <label for="example-email" class="col-md-12 col-xs-12">City</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="vendor_plan_city_limit" data-placeholder="Select City" multiple="multiple" style="width:100%"></select>
+                            </div>
+                        </div>
+                        <div class="form-check-input col-md-4  col-xs-12" style="margin-top:25px !important">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="vendor_plan_type_active" type="checkbox" checked> Is Active
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="AdminPlans.AddUpdateVendorPlans()">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

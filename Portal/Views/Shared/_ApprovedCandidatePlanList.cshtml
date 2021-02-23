@@ -1,0 +1,59 @@
+﻿
+@model List<Portal.DAL.getIsApprovedCandidatePlans_Result>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="table_get_all_is_activated_candidate_planlist">
+            <thead>
+                <tr>
+                    <th>plan ID</th>
+                    <th>Plan Name</th>
+                    <th>User Name</th>
+                    <th>Role</th>
+                    <th>Plan Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.userplan_id</td>
+                        <td>@item.plan_name</td>
+                        <td>@item.user_name</td>
+                        <td>@item.role_name</td>
+                        <td>@item.plan_time</td>
+
+                        <td class="" style="margin:0px auto;">
+                            @if (Convert.ToBoolean(item.is_active))
+                            {
+                                @*<buttton class="btn"> Plan Approved</buttton>*@
+                            <span class="btn btn-warning" role="button" style="width:106px">Plan Approved</span>
+                            }
+                            else
+                            {
+                                <buttton class="btn btn-info" style="width:106px" onclick="AdminPlans.ApprovePlan('@item.userplan_id','@item.user_name')">Approve Plan</buttton>
+                            }
+</tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <section class="content">
+        <div class="error-page">
+            <div class="error-content">
+                <h3><i class="fa fa-warning text-yellow"></i> Oops! There is no record.</h3>
+            </div>
+            <!-- /.error-content -->
+        </div>
+        <!-- /.error-page -->
+    </section>
+    /**/
+}
+
+    <script src="~/Areas/Admin/Scripts/Modules/Plans.js"></script>

@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = "~/Areas/Candidate/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" onclick='AdminPlans.OpenCandidatePlanModal()' class="btn btn-primary pull-right">Add Candidate Plan</button>
+    </div>
+</div>
+
+<br />
+<br />
+
+<div id="vendor_plan_list_div" class="" style="clear:both">
+
+</div>
+
+@section scripts {
+     @Html.Partial("~/Views/Shared/_CandidatePlanForm.cshtml")
+    <script src="~/Areas/Admin/Scripts/Modules/Plans.js"></script>
+    <script>
+        $(function () {
+            AdminPlans.LoadVendorPlanList();
+            System.LoadDropDown("multi_country_dropdown", "vendor_plan_country_limit", null, null, null);
+            //$('#vendor_plan_country_limit').select2();
+            $('#candidate_plan_state_limit').select2();
+            $('#candidate_plan_city_limit').select2();
+        });
+    </script>
+
+}

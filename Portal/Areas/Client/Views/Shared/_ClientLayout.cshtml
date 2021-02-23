@@ -1,0 +1,108 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Areas/Vendor/Contents/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.5.0/selectize.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css" />
+    <link href="~/Areas/Vendor/Contents/style.css" rel="stylesheet" />
+    <link href="~/Areas/Vendor/Contents/font-awesome.css" rel="stylesheet" />
+    @*<link href="~/Areas/cPanel/Content/css/MDB/mdb.min.css" rel="stylesheet" />*@
+
+    @*Script*@
+    <script src="~/Areas/Vendor/Scripts/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Areas/Vendor/Scripts/bootstrap.min.js"></script>
+    @*<script src="~/Areas/cPanel/Scripts/datatables/jquery.dataTables.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.5.0/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.js"></script>
+    <script src="~/Scripts/jquery.tablesorter.js"></script>
+    @*<script src="~/Areas/cPanel/Scripts/toastr8/toastr8.js"></script>*@
+    @*<script src="~/Areas/Vendor/Scripts/custom.js"></script>*@
+    @*<script src="~/Areas/Vendor/Scripts/Modules/System.js"></script>*@
+    <script src="~/scripts/Modules/System.js"></script>
+    <script src="~/Areas/Admin/Scripts/Modules/Admin.js"></script>
+    <style>
+        .notification {
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bolder;
+            font-size: 12px !important;
+        }
+
+        .warning {
+            background: #f7be3c !important;
+        }
+
+        .success {
+            background: #28a745 !important;
+        }
+    </style>
+</head>
+<body class="nav-sm">
+    <div class="container body">
+        <div class="main_container" style="background-color:#3d3d3d">
+            <div class="col-md-3 left_col goldbell-grey">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title goldbell-grey" style="border: 0;">
+                        <a href="#" class="site_title"><i class="fa fa-paw"></i> <span>CodeLate</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu goldbell-grey">
+                        <div class="menu_section">
+                            <ul class="nav side-menu">
+                                <li><a href="@Url.Action("Profile", "Client")"><i class="fa fa-users" aria-hidden="true"></i>Profile</a></li>
+                                <li><a href="@Url.Action("SentInterests", "Client")"><i class="fa fa-map-o" aria-hidden="true"></i>SentInterests</a></li>
+                                <li><a href="@Url.Action("PostedRequirements", "Client")"><i class="fa fa-map-o" aria-hidden="true"></i>My Requests</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top_nav">
+                <div class="nav_menu goldbell-yellow">
+                    <nav class="" role="navigation">
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp; @Session["CurrentUserName"]
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="@Url.Action("Profile", "Vendor")"> Profile</a></li>
+                                    <li><a href="@Url.Action("Logout", "Home", new { Area = string.Empty })"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="right_col" role="main">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>@ViewBag.Title</h3>
+                    </div>
+                    @RenderSection("title_right", false)
+                </div>
+                <div class="clearfix"></div>
+                @RenderSection("top_tiles", false)
+                <input type="hidden" id="business_partner_id" />
+                <input type="hidden" id="business_partner_type" />
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("scripts", false)
+</body>
+</html>

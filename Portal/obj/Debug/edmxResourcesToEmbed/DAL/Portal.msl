@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PortalModelStoreContainer" CdmEntityContainer="PortalEntities">
+    <EntitySetMapping Name="portal_city">
+      <EntityTypeMapping TypeName="PortalModel.portal_city">
+        <MappingFragment StoreEntitySet="portal_city">
+          <ScalarProperty Name="pk_city_id" ColumnName="pk_city_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="fk_state_id" ColumnName="fk_state_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_country">
+      <EntityTypeMapping TypeName="PortalModel.portal_country">
+        <MappingFragment StoreEntitySet="portal_country">
+          <ScalarProperty Name="pk_country_id" ColumnName="pk_country_id" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_experience">
+      <EntityTypeMapping TypeName="PortalModel.portal_experience">
+        <MappingFragment StoreEntitySet="portal_experience">
+          <ScalarProperty Name="pk_experience_level_id" ColumnName="pk_experience_level_id" />
+          <ScalarProperty Name="experience_years" ColumnName="experience_years" />
+          <ScalarProperty Name="level" ColumnName="level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_experise">
+      <EntityTypeMapping TypeName="PortalModel.portal_experise">
+        <MappingFragment StoreEntitySet="portal_experise">
+          <ScalarProperty Name="pk_expertise_id" ColumnName="pk_expertise_id" />
+          <ScalarProperty Name="expertise_name" ColumnName="expertise_name" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_recruiter_profile">
+      <EntityTypeMapping TypeName="PortalModel.portal_recruiter_profile">
+        <MappingFragment StoreEntitySet="portal_recruiter_profile">
+          <ScalarProperty Name="job_type" ColumnName="job_type" />
+          <ScalarProperty Name="fk_vendor_id" ColumnName="fk_vendor_id" />
+          <ScalarProperty Name="profile_pic" ColumnName="profile_pic" />
+          <ScalarProperty Name="about_us" ColumnName="about_us" />
+          <ScalarProperty Name="availablity" ColumnName="availablity" />
+          <ScalarProperty Name="pk_resource_profile_id" ColumnName="pk_resource_profile_id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+          <ScalarProperty Name="fk_state_id" ColumnName="fk_state_id" />
+          <ScalarProperty Name="fk_city_id" ColumnName="fk_city_id" />
+          <ScalarProperty Name="fk_country_id" ColumnName="fk_country_id" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="minimum_tenure" ColumnName="minimum_tenure" />
+          <ScalarProperty Name="fk_experience_level" ColumnName="fk_experience_level" />
+          <ScalarProperty Name="expertise_profession" ColumnName="expertise_profession" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_role">
+      <EntityTypeMapping TypeName="PortalModel.portal_role">
+        <MappingFragment StoreEntitySet="portal_role">
+          <ScalarProperty Name="pk_role_id" ColumnName="pk_role_id" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_state">
+      <EntityTypeMapping TypeName="PortalModel.portal_state">
+        <MappingFragment StoreEntitySet="portal_state">
+          <ScalarProperty Name="pk_state_id" ColumnName="pk_state_id" />
+          <ScalarProperty Name="state_name" ColumnName="state_name" />
+          <ScalarProperty Name="fk_country_id" ColumnName="fk_country_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_user">
+      <EntityTypeMapping TypeName="PortalModel.portal_user">
+        <MappingFragment StoreEntitySet="portal_user">
+          <ScalarProperty Name="is_email_verified" ColumnName="is_email_verified" />
+          <ScalarProperty Name="user_hash" ColumnName="user_hash" />
+          <ScalarProperty Name="is_paid_user" ColumnName="is_paid_user" />
+          <ScalarProperty Name="pk_user_id" ColumnName="pk_user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="profile_pic" ColumnName="profile_pic" />
+          <ScalarProperty Name="about_us" ColumnName="about_us" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="last_login_date" ColumnName="last_login_date" />
+          <ScalarProperty Name="login_count" ColumnName="login_count" />
+          <ScalarProperty Name="fk_country_id" ColumnName="fk_country_id" />
+          <ScalarProperty Name="fk_state_id" ColumnName="fk_state_id" />
+          <ScalarProperty Name="fk_city_id" ColumnName="fk_city_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_user_role_mapping">
+      <EntityTypeMapping TypeName="PortalModel.portal_user_role_mapping">
+        <MappingFragment StoreEntitySet="portal_user_role_mapping">
+          <ScalarProperty Name="pk_user_role_id" ColumnName="pk_user_role_id" />
+          <ScalarProperty Name="fk_role_id" ColumnName="fk_role_id" />
+          <ScalarProperty Name="fk_user_id" ColumnName="fk_user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_for_interested_Candidate">
+      <EntityTypeMapping TypeName="PortalModel.portal_for_interested_Candidate">
+        <MappingFragment StoreEntitySet="portal_for_interested_Candidate">
+          <ScalarProperty Name="fk_vendor_id" ColumnName="fk_vendor_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fk_candidate_id" ColumnName="fk_candidate_id" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="requested_date" ColumnName="requested_date" />
+          <ScalarProperty Name="fk_user_id" ColumnName="fk_user_id" />
+          <ScalarProperty Name="requirement_title" ColumnName="requirement_title" />
+          <ScalarProperty Name="requirement_title_select" ColumnName="requirement_title_select" />
+          <ScalarProperty Name="pk_candidate_interested_id" ColumnName="pk_candidate_interested_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_post_requirement">
+      <EntityTypeMapping TypeName="PortalModel.portal_post_requirement">
+        <MappingFragment StoreEntitySet="portal_post_requirement">
+          <ScalarProperty Name="status_by_codelate" ColumnName="status_by_codelate" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="client_reason" ColumnName="client_reason" />
+          <ScalarProperty Name="project_type" ColumnName="project_type" />
+          <ScalarProperty Name="fk_client_id" ColumnName="fk_client_id" />
+          <ScalarProperty Name="status_reason" ColumnName="status_reason" />
+          <ScalarProperty Name="approved_status" ColumnName="approved_status" />
+          <ScalarProperty Name="added_date" ColumnName="added_date" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="requirement_title" ColumnName="requirement_title" />
+          <ScalarProperty Name="pk_requirement_id" ColumnName="pk_requirement_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="portal_get_post_requirement" FunctionName="PortalModel.Store.portal_get_post_requirement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.portal_get_post_requirement_Result">
+          <ScalarProperty Name="pk_requirement_id" ColumnName="pk_requirement_id" />
+          <ScalarProperty Name="requirement_title" ColumnName="requirement_title" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="added_date" ColumnName="added_date" />
+          <ScalarProperty Name="approved_status" ColumnName="approved_status" />
+          <ScalarProperty Name="status_reason" ColumnName="status_reason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="portal_requirement_vendor_mapping">
+      <EntityTypeMapping TypeName="PortalModel.portal_requirement_vendor_mapping">
+        <MappingFragment StoreEntitySet="portal_requirement_vendor_mapping">
+          <ScalarProperty Name="map_date" ColumnName="map_date" />
+          <ScalarProperty Name="fk_vendor_id" ColumnName="fk_vendor_id" />
+          <ScalarProperty Name="fk_post_id" ColumnName="fk_post_id" />
+          <ScalarProperty Name="pk_post_requirement_vendor_mapping" ColumnName="pk_post_requirement_vendor_mapping" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="get_candidate_show_interest_by_client" FunctionName="PortalModel.Store.get_candidate_show_interest_by_client">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.get_candidate_show_interest_by_client_Result">
+          <ScalarProperty Name="requirement_title_select" ColumnName="requirement_title_select" />
+          <ScalarProperty Name="requirement_title" ColumnName="requirement_title" />
+          <ScalarProperty Name="requested_date" ColumnName="requested_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="fk_city_id" ColumnName="fk_city_id" />
+          <ScalarProperty Name="experience_years" ColumnName="experience_years" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="expertise" ColumnName="expertise" />
+          <ScalarProperty Name="pk_candidate_interested_id" ColumnName="pk_candidate_interested_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="portal_what_client_says">
+      <EntityTypeMapping TypeName="PortalModel.portal_what_client_says">
+        <MappingFragment StoreEntitySet="portal_what_client_says">
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="is_published_by_admin" ColumnName="is_published_by_admin" />
+          <ScalarProperty Name="added_datetime" ColumnName="added_datetime" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="discription" ColumnName="discription" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="pk_client_what_says_id" ColumnName="pk_client_what_says_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="portal_get_candidates_by_vendor" FunctionName="PortalModel.Store.portal_get_candidates_by_vendor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.portal_get_candidates_by_vendor_Result">
+          <ScalarProperty Name="pk_resource_profile_id" ColumnName="pk_resource_profile_id" />
+          <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="fk_experience_level" ColumnName="fk_experience_level" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="availablity" ColumnName="availablity" />
+          <ScalarProperty Name="about_us" ColumnName="about_us" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+          <ScalarProperty Name="state_name" ColumnName="state_name" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="pk_candidate_interested_id" ColumnName="pk_candidate_interested_id" />
+          <ScalarProperty Name="experience_years" ColumnName="experience_years" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="expertise_text" ColumnName="expertise_text" />
+          <ScalarProperty Name="job_type" ColumnName="job_type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="portal_get_candidates" FunctionName="PortalModel.Store.portal_get_candidates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.portal_get_candidates_Result1">
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="pk_resource_profile_id" ColumnName="pk_resource_profile_id" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="availablity" ColumnName="availablity" />
+          <ScalarProperty Name="about_us" ColumnName="about_us" />
+          <ScalarProperty Name="fk_experience_level" ColumnName="fk_experience_level" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="experience_years" ColumnName="experience_years" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+          <ScalarProperty Name="state_name" ColumnName="state_name" />
+          <ScalarProperty Name="is_Active" ColumnName="is_Active" />
+          <ScalarProperty Name="profile_pic" ColumnName="profile_pic" />
+          <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+          <ScalarProperty Name="pk_candidate_interested_id" ColumnName="pk_candidate_interested_id" />
+          <ScalarProperty Name="expertise" ColumnName="expertise" />
+          <ScalarProperty Name="expertise_text" ColumnName="expertise_text" />
+          <ScalarProperty Name="job_type" ColumnName="job_type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="portal_plan">
+      <EntityTypeMapping TypeName="PortalModel.portal_plan">
+        <MappingFragment StoreEntitySet="portal_plan">
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="plan_name" ColumnName="plan_name" />
+          <ScalarProperty Name="pk_plan_type_id" ColumnName="pk_plan_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_vendor_price_plan">
+      <EntityTypeMapping TypeName="PortalModel.portal_vendor_price_plan">
+        <MappingFragment StoreEntitySet="portal_vendor_price_plan">
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="per_technology_price" ColumnName="per_technology_price" />
+          <ScalarProperty Name="per_leads_access_price" ColumnName="per_leads_access_price" />
+          <ScalarProperty Name="per_interest_received_price" ColumnName="per_interest_received_price" />
+          <ScalarProperty Name="per_candidate_listing_price" ColumnName="per_candidate_listing_price" />
+          <ScalarProperty Name="pk_vendor_plan_price_id" ColumnName="pk_vendor_plan_price_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="portal_get_cities_by_state" FunctionName="PortalModel.Store.portal_get_cities_by_state">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.portal_get_cities_by_state_Result">
+          <ScalarProperty Name="pk_city_id" ColumnName="pk_city_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="fk_state_id" ColumnName="fk_state_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="portal_get_states_by_country" FunctionName="PortalModel.Store.portal_get_states_by_country">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.portal_get_states_by_country_Result">
+          <ScalarProperty Name="pk_state_id" ColumnName="pk_state_id" />
+          <ScalarProperty Name="state_name" ColumnName="state_name" />
+          <ScalarProperty Name="fk_country_id" ColumnName="fk_country_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="portal_SplitString" FunctionName="PortalModel.Store.portal_SplitString" />
+    <EntitySetMapping Name="portal_user_candidate_info">
+      <EntityTypeMapping TypeName="PortalModel.portal_user_candidate_info">
+        <MappingFragment StoreEntitySet="portal_user_candidate_info">
+          <ScalarProperty Name="head_line" ColumnName="head_line" />
+          <ScalarProperty Name="preferred_state" ColumnName="preferred_state" />
+          <ScalarProperty Name="preferred_city" ColumnName="preferred_city" />
+          <ScalarProperty Name="preferred_country" ColumnName="preferred_country" />
+          <ScalarProperty Name="availability" ColumnName="availability" />
+          <ScalarProperty Name="resume" ColumnName="resume" />
+          <ScalarProperty Name="technologies" ColumnName="technologies" />
+          <ScalarProperty Name="fk_user_id" ColumnName="fk_user_id" />
+          <ScalarProperty Name="pk_candidate_info_id" ColumnName="pk_candidate_info_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_vendor_plan_mapping">
+      <EntityTypeMapping TypeName="PortalModel.portal_vendor_plan_mapping">
+        <MappingFragment StoreEntitySet="portal_vendor_plan_mapping">
+          <ScalarProperty Name="fk_vendor_plan_id" ColumnName="fk_vendor_plan_id" />
+          <ScalarProperty Name="fk_vendor_id" ColumnName="fk_vendor_id" />
+          <ScalarProperty Name="pk_vendor_plan_mapping_id" ColumnName="pk_vendor_plan_mapping_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_vendor_lead_access_mapping">
+      <EntityTypeMapping TypeName="PortalModel.portal_vendor_lead_access_mapping">
+        <MappingFragment StoreEntitySet="portal_vendor_lead_access_mapping">
+          <ScalarProperty Name="fk_vendor_id" ColumnName="fk_vendor_id" />
+          <ScalarProperty Name="fk_lead_access_id" ColumnName="fk_lead_access_id" />
+          <ScalarProperty Name="pk_vendor_lead_access_mapping_id" ColumnName="pk_vendor_lead_access_mapping_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_candidate_plan">
+      <EntityTypeMapping TypeName="PortalModel.portal_candidate_plan">
+        <MappingFragment StoreEntitySet="portal_candidate_plan">
+          <ScalarProperty Name="custom_plan_price" ColumnName="custom_plan_price" />
+          <ScalarProperty Name="city_listing_names" ColumnName="city_listing_names" />
+          <ScalarProperty Name="state_listing_names" ColumnName="state_listing_names" />
+          <ScalarProperty Name="country_listing_names" ColumnName="country_listing_names" />
+          <ScalarProperty Name="added_date" ColumnName="added_date" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="per_technology_count" ColumnName="per_technology_count" />
+          <ScalarProperty Name="technology_count" ColumnName="technology_count" />
+          <ScalarProperty Name="technology_limit" ColumnName="technology_limit" />
+          <ScalarProperty Name="lead_access_limit" ColumnName="lead_access_limit" />
+          <ScalarProperty Name="city_listing" ColumnName="city_listing" />
+          <ScalarProperty Name="state_listing" ColumnName="state_listing" />
+          <ScalarProperty Name="fk_plan_id" ColumnName="fk_plan_id" />
+          <ScalarProperty Name="pk_candidate_plan_id" ColumnName="pk_candidate_plan_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_vendor_plan">
+      <EntityTypeMapping TypeName="PortalModel.portal_vendor_plan">
+        <MappingFragment StoreEntitySet="portal_vendor_plan">
+          <ScalarProperty Name="top_ranking" ColumnName="top_ranking" />
+          <ScalarProperty Name="bold_listing" ColumnName="bold_listing" />
+          <ScalarProperty Name="fk_role_id" ColumnName="fk_role_id" />
+          <ScalarProperty Name="plan_duration_type" ColumnName="plan_duration_type" />
+          <ScalarProperty Name="custom_plan_price" ColumnName="custom_plan_price" />
+          <ScalarProperty Name="city_listing_names" ColumnName="city_listing_names" />
+          <ScalarProperty Name="state_listing_names" ColumnName="state_listing_names" />
+          <ScalarProperty Name="country_listing_names" ColumnName="country_listing_names" />
+          <ScalarProperty Name="added_date" ColumnName="added_date" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="per_technology_count" ColumnName="per_technology_count" />
+          <ScalarProperty Name="technology_count" ColumnName="technology_count" />
+          <ScalarProperty Name="technology_limit" ColumnName="technology_limit" />
+          <ScalarProperty Name="lead_access_limit" ColumnName="lead_access_limit" />
+          <ScalarProperty Name="city_listing" ColumnName="city_listing" />
+          <ScalarProperty Name="state_listing" ColumnName="state_listing" />
+          <ScalarProperty Name="country_listing" ColumnName="country_listing" />
+          <ScalarProperty Name="interest_recived_limit" ColumnName="interest_recived_limit" />
+          <ScalarProperty Name="candidate_listing_limit" ColumnName="candidate_listing_limit" />
+          <ScalarProperty Name="fk_plan_id" ColumnName="fk_plan_id" />
+          <ScalarProperty Name="pk_vendor_plan_id" ColumnName="pk_vendor_plan_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="portal_userplan_mapping">
+      <EntityTypeMapping TypeName="PortalModel.portal_userplan_mapping">
+        <MappingFragment StoreEntitySet="portal_userplan_mapping">
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="plan_time" ColumnName="plan_time" />
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="userplan_id" ColumnName="userplan_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getIsApprovedCandidatePlans" FunctionName="PortalModel.Store.getIsApprovedCandidatePlans">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.getIsApprovedCandidatePlans_Result">
+          <ScalarProperty Name="userplan_id" ColumnName="userplan_id" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="plan_time" ColumnName="plan_time" />
+          <ScalarProperty Name="plan_name" ColumnName="plan_name" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="portal_plan_duration_left">
+      <EntityTypeMapping TypeName="PortalModel.portal_plan_duration_left">
+        <MappingFragment StoreEntitySet="portal_plan_duration_left">
+          <ScalarProperty Name="fk_user_id" ColumnName="fk_user_id" />
+          <ScalarProperty Name="portal_userplan_id" ColumnName="portal_userplan_id" />
+          <ScalarProperty Name="updated_top_ranking" ColumnName="updated_top_ranking" />
+          <ScalarProperty Name="top_ranking" ColumnName="top_ranking" />
+          <ScalarProperty Name="bold_listing" ColumnName="bold_listing" />
+          <ScalarProperty Name="fk_role_id" ColumnName="fk_role_id" />
+          <ScalarProperty Name="plan_duration_type" ColumnName="plan_duration_type" />
+          <ScalarProperty Name="custom_plan_price" ColumnName="custom_plan_price" />
+          <ScalarProperty Name="added_date" ColumnName="added_date" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="per_technology_count" ColumnName="per_technology_count" />
+          <ScalarProperty Name="technology_count" ColumnName="technology_count" />
+          <ScalarProperty Name="technology_limit" ColumnName="technology_limit" />
+          <ScalarProperty Name="lead_access_limit" ColumnName="lead_access_limit" />
+          <ScalarProperty Name="interest_recived_limit" ColumnName="interest_recived_limit" />
+          <ScalarProperty Name="candidate_listing_limit" ColumnName="candidate_listing_limit" />
+          <ScalarProperty Name="fk_plan_id" ColumnName="fk_plan_id" />
+          <ScalarProperty Name="pk_vendor_plan_id" ColumnName="pk_vendor_plan_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

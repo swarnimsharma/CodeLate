@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "ApprovedCandidatePlans";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="is_approved_candidate_list_div" class="" style="clear:both">
+
+</div>
+<script>
+    $(function () {
+        $.ajax({
+            url: "../Admin/_ApprovedCandidatePlanList",
+            cache: false,
+            type: "GET",
+            dataType: "html",
+            contentType: 'application/html; charset=utf-8',
+            success: function (result) {
+                $('#is_approved_candidate_list_div').html(result);
+            },
+            error: function (err) {
+                //ShowModel("Error", err)
+            },
+            complete: function () {
+                $('#table_get_all_is_activated_candidate_planlist').DataTable();
+            }
+        });
+
+    });
+
+</script>

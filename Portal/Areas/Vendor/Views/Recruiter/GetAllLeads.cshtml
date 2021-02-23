@@ -1,0 +1,80 @@
+﻿@model List<Portal.ViewModels.PostYourRequirement>
+@using Portal.Common;
+
+
+@if (Model != null && Model.Count > 0)
+{
+    int count = 0;
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th><center>Sr No.</center></th>
+                    <th><center>Requirement Title</center></th>
+                    <th><center>Description</center></th>
+                    <th><center>Codelate Status</center></th>
+                    <th><center>Date</center></th>
+                    @if (Convert.ToBoolean(Session[SessionKey.CurrentUserPremium]))
+                    {
+                        <th><center>Action</center></th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count = (count + 1);
+                <tr class="success">
+                    <td>@(count)</td>
+                    <td>@item.requirement_title</td>
+                    <td>@item.message</td>
+                    <td>
+                        @if (item.status == 0)
+                        {
+                            <span style="background-color: #ffc107;" class="badge badge-warning">Pending</span>
+                        }
+                        else if (item.status == 1)
+                        {
+                            <span style="background-color: #28a745" class="badge badge-success">Approved</span>
+                        }
+                        else
+                        {
+                            <span style="background-color: #dc3545;" class="badge badge-danger">Rejected</span>
+                        }
+                    </td>
+                    <td>
+                        @if (item.status_by_codelate == 0)
+                        {
+                            <span style="background-color: #ffc107;" class="badge badge-warning">Pending</span>
+                        }
+                        else if (item.status_by_codelate == 1)
+                        {
+                            <span style="background-color: #28a745" class="badge badge-success">Approved</span>
+                        }
+                        else if (item.status_by_codelate == 2)
+                        {
+                            <span style="background-color: #dc3545;" class="badge badge-danger">Rejected</span>
+                        }
+                        else
+                        {
+                            <span style="" class="badge badge-danger">Not Seen by Codelate yet!</span>
+                        }
+                    </td>
+                    <td>@item.added_datetime</td>
+                    @if (Convert.ToBoolean(Session[SessionKey.CurrentUserPremium]))
+                    {
+                        <td>
+                            <button type="button" onclick="Candidate.ShowPostRequirementDetail(@item.post_id)" class="btn btn-primary">View Details</button>
+                        </td>
+                    }
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}

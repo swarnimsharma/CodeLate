@@ -1,0 +1,41 @@
+﻿<style type="text/css">
+     .modal-login .modal-header h4 {
+        text-align: center;
+    }
+</style>
+
+
+<!-- Modal HTML -->
+<div id="login_modal" class="modal fade">
+    <div class="modal-dialog modal-login modal-md popup-modal-1" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Member Login</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="Required_fields_message" class="form-group" hidden>
+                    <span style="color:#d9534f !important">Required Fields can't be empty !</span>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="login_user_name" name="username" placeholder="Username" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="login_user_password" name="password" placeholder="Password" required="required">
+                </div>
+                <div class="form-group" hidden>
+                    <span>Wrong Password</span>
+                </div>
+                <div id="login_alert_message" class="alert" style="" hidden>
+                    <span id="login_status_message"></span>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="login_btn" onclick="Account.UserLogin()" class="btn btn-primary btn-lg btn-block login-btn"><i id="login_btn_spinner" class="fa fa-circle-o-notch fa-spin"></i>&nbsp; Login</button>
+                </div>
+            </div>
+            @*<div class="modal-footer">
+                <a href="#">Forgot Password?</a>
+            </div>*@
+        </div>
+    </div>
+</div>    

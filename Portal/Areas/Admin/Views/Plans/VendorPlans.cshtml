@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "VendorPlans";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p id="alert_message">
+        Success alert preview. This alert is dismissable.
+    </p>
+</div>*@
+
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" onclick='AdminPlans.OpenVendorPlanModal()' class="btn btn-primary pull-right">Add Vendor Plan</button>
+    </div>
+</div>
+
+<br />
+<br />
+
+<div id="vendor_plan_list_div" class="" style="clear:both">
+
+</div>
+
+@section scripts {
+    @Html.Partial("~/Views/Shared/_VendorPlanForm.cshtml")
+    <script src="~/Areas/Admin/Scripts/Modules/Plans.js"></script>
+    <script>
+        $(function () {
+            AdminPlans.LoadVendorPlanList();
+            System.LoadDropDown("multi_country_dropdown", "vendor_plan_country_limit", null, null, null);
+            //$('#vendor_plan_country_limit').select2();
+            $('#vendor_plan_state_limit').select2();
+            $('#vendor_plan_city_limit').select2();
+        });
+    </script>
+
+}

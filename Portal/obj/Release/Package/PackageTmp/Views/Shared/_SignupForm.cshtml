@@ -1,0 +1,53 @@
+﻿<style>
+     .modal-register .modal-header h4 {
+        text-align: center;
+    }
+</style>
+
+<!-- Modal HTML -->
+<div id="register_modal" class="modal fade" style="z-index:999999 !important">
+    <div class="modal-dialog modal-login modal-sm modal-register popup-modal-1" id="modal-register">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Register</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="register_required_fields_message" class="form-group" hidden>
+                    <span style="color:#d9534f !important">Required Fields can't be empty !</span>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="register_user_type">
+                        <option value="">Select User *</option>
+                        <option value="2">Vendor</option>
+                        <option value="3">Client</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="register_full_name" name="fullname" placeholder="Full Name" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="register_user_name" name="username" placeholder="Username" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="register_user_email" name="username" placeholder="Email" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="register_user_contact" name="contact" placeholder="Contact" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="register_user_password" name="password" placeholder="Password" required="required">
+                </div>
+                <div class="form-group" hidden>
+                    <span>Wrong Password</span>
+                </div>
+                <div id="register_alert_message" class="alert" style="" hidden>
+                    <span id="register_status_message"></span>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="register_btn" onclick="Account.UserRegister()" class="btn btn-primary btn-lg btn-block register-btn"><i id="register_btn_spinner" class="fa fa-circle-o-notch fa-spin"></i>&nbsp; Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    

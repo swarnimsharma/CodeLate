@@ -1,0 +1,31 @@
+﻿@model Portal.ViewModels.UserViewModel
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default" id="approv_reject_panel" style="">
+            <div class="panel-heading">User Detail</div>
+            <div class="panel-body">
+                <div class="row">
+                    <input type="hidden" id="hidden_post_requirement_id" />
+                </div>
+                <div class="row" style="">
+                    <div class="col-md-offset-4">
+                        <strong style="font-size:17px">Interested User Details:</strong>
+                    </div>
+                    <ul>
+                        <li><strong>Name :</strong> @(Model.firstname+" "+ Model.lastname)</li>
+                        <li><strong>Mobile :</strong> @Model.contact</li>
+                        <li><strong>Email :</strong> @Model.email</li>
+                        <li><strong>Locality :</strong> @Model.city_name</li>
+                        <li><strong>About Us :</strong> @Model.about_us</li>
+                    </ul>
+                    <hr />
+                </div>
+            </div>
+            <div class="panel-body">
+                <button type="button" class="btn btn-secondary pull-right" onclick="Candidate.CloseInterestedUserDetail()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+

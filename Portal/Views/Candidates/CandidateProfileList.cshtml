@@ -1,0 +1,82 @@
+﻿@model List<Portal.ViewModels.CandidatesListViewModel>
+
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="row">
+        <!-- Team member -->
+        @foreach (var item in Model)
+        {
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="image-flip" ontouchstart="">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    @if (!string.IsNullOrEmpty(item.profile_pic))
+                                    {
+                                        <p><img class="img-fluid" src="~/Assets/Images/@item.profile_pic" alt="card image"></p>
+                                    }
+                                    else
+                                    {
+                                        <p><img class="img-fluid" src="http://simpleicon.com/wp-content/uploads/account.png" alt="card image"></p>
+                                    }
+                                    <h4 class="card-title">@item.expertise</h4>
+                                    <p class="card-text"><span>Exp: </span>@item.experience</p>
+                                    <p class="card-text"><span>Country: </span>@item.country <strong style="font-size: 18px;">|</strong> <span>State: </span>@item.state <strong style="font-size: 18px;">|</strong> <span>City: </span>@item.city</p>
+
+                                    @if (!string.IsNullOrEmpty(item.job_type))
+                                    {
+                                        if (item.job_type == "Both")
+                                        {
+                                            <p class="card-text"><span>Employment: </span> Fulltime / Contractual</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="card-text"><span>Employment: </span>@item.job_type</p>
+                                        }
+                                    }
+
+                                    
+                                    @if (!string.IsNullOrEmpty(item.availablity))
+                                    {
+                                        if (item.availablity == "30_more")
+                                        {
+                                            <p class="card-text"><span>Availability: </span>30 or More Days</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="card-text"><span>Availability: </span>@item.availablity (In Days)</p>
+                                        }
+                                    }
+                                    <p class="card-text"><span></span>@item.about_us</p>
+
+
+                                    @if (Session["CurrentUserID"] != null)
+                                    {
+                                        if (item.is_already_interested)
+                                        {
+                                            <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-check"></i>Already Interested</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="#" class="btn btn-primary btn-sm" onclick="Candidate.OpenInterestedModal(@item.pk_resource_profile_id)"><i class="fa fa-heart"></i> Interested to hire ?</a>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <a href="#login_modal" data-toggle="modal" class="btn btn-primary btn-sm" onclick="Account.ResetLogin();"><i class="fa fa-heart"></i> Interested?</a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">There are no records yet!!!</h3>
+}

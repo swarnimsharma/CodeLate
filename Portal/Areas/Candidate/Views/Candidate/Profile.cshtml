@@ -1,0 +1,144 @@
+﻿<style>
+    #candidate_fk_technology.btn-group {
+        width: 100% !important;
+    }
+
+        #candidate_fk_technology.btn-group button {
+            width: 100% !important;
+        }
+</style>
+
+@{
+    Layout = "~/Areas/Candidate/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Profile</title>
+</head>
+<body>
+    <div>
+        @Html.Partial("~/Views/Shared/_CandidateSignUp.cshtml")
+        <input type="hidden" id="hidden_user_id" value="@ViewBag.user_id"/>
+    </div>
+    <script>
+        $(function () {
+             CandidateForm.GetCandidateProfile(@ViewBag.user_id);
+        });
+    </script>
+</body>
+</html>
+@section scripts {
+    <script src="~/Areas/Candidate/Script/CandidateForm.js"></script>
+    <script>
+        $(function () {
+        Common.LoadDropDown("county_dropdown", "candidate_fk_country_id");
+        Common.LoadDropDown("expertise_dropdown", "candidate_fk_technology");
+        //System.LoadDropDown("expertise_dropdown", "vendor_plan_country_limit", null, null, null);
+        System.LoadDropDown("expertise_dropdown", "candidate_fk_technology", null, null, null);
+        System.LoadDropDown("multi_country_dropdown", "preferred_country_id", null, null, null);
+        System.LoadDropDown("multi_state_dropdown", "preferred_state_id", null, null, null);
+        System.LoadDropDown("multi_city_dropdown", "preferred_city_id", null, null, null);
+        $('#preferred_state_id').select2();
+        $('#preferred_city_id').select2();
+
+        $("#candidate_profile_image").change(function () {
+            var data = new FormData();
+            var files = $("#candidate_profile_image").get(0).files;
+            if (files.length > 0) {
+                data.append("Files", files[0]);
+            }
+            $.ajax({
+                url: "/UploadHandler/UploadFile",
+                type: "POST",
+                processData: false,
+                contentType: false,
+                data: data,
+                success: function (response) {
+                    debugger;
+                    //code after success
+                    $("#profile_image_preview").attr('src', "../../Assets/Images/" + response);
+                    $('#hidden_candidate_pic').val(response);
+                },
+                error: function (er) {
+                    alert(er);
+                }
+
+            });
+        });
+
+        $("#candidate_cv").change(function () {
+            var data = new FormData();
+            var files = $("#candidate_cv").get(0).files;
+            if (files.length > 0) {
+                data.append("Files", files[0]);
+            }
+            $.ajax({
+                url: "/UploadHandler/UploadFile",
+                type: "POST",
+                processData: false,
+                contentType: false,
+                data: data,
+                success: function (response) {
+                    debugger;
+                    //code after success
+                    //$("#profile_image_preview").attr('src', "../../Assets/Images/" + response);
+                    $('#hidden_candidate_cv').val(response);
+                },
+                error: function (er) {
+                    alert(er);
+                }
+
+            });
+        });
+    });
+    </script>
+}
+
+
+<style>
+    .preview {
+        padding: 10px;
+        position: relative;
+    }
+
+        .preview i {
+            color: white;
+            font-size: 35px;
+            transform: translate(50px,130px);
+        }
+
+    .preview-img {
+        border-radius: 100%;
+        plan-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.7);
+    }
+
+    .browse-button {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        position: absolute; /* Tweak the position property if the element seems to be unfit */
+        top: 10px;
+        bottom: 0;
+        left: 10px;
+        right: 0;
+        background: linear-gradient(180deg, transparent, black);
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+        .browse-button:hover {
+            opacity: 1;
+        }
+
+    .browse-input {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        transform: translate(-1px,-26px);
+        opacity: 0;
+    }
+</style>

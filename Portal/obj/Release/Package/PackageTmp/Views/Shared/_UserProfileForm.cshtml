@@ -1,0 +1,173 @@
+﻿
+
+<div class="row">
+    <div class="col-md-8" id="user_main_info_section">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title" id="user_header_text">Personal Information</h3>
+                <span class="pull-right clickable"><i class="fa fa-chevron-up"></i></span>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal form-material">
+                    <div class="col-md-3" id="user_pic_section">
+                        <input type="hidden" id="user_pk_id" value="@ViewBag.current_user_id" />
+                        <div class="preview text-center">
+                            <img class="preview-img" id="profile_image_preview" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" style="width: 150px; height:150px">
+                            <div class="browse-button">
+                                <i class="fa fa-pencil-alt"></i>
+                                <input class="browse-input" type="file" required="" name="UploadedFile" id="user_profile_image">
+                                <input type="hidden" id="hidden_user_pic" />
+                            </div>
+                            <span class="Error"></span>
+                        </div>
+                    </div>
+                    <div id="user_main_section" class="col-md-9">
+                        <input type="hidden" id="hidden_user_type" value="not_admin" />
+                        <div id="user_profile_alert_message" class="alert" style="" hidden>
+                            <strong id="user_status_message"></strong>
+                        </div>
+                        <div id="user_required_fields_message" class="form-group" hidden>
+                            <span style="color:#d9534f !important">Required Fields can't be empty !</span>
+                        </div>
+                        @*<div class="col-md-12 notification" id="personal_notification_block" hidden>
+                                <p id="personal_notification_text"></p>
+                        </div>*@
+                        <br />
+                        <div id="user_type_formgroup" class="form-group col-md-6  col-xs-12" hidden>
+                            <label for="example-email" class="col-md-12 col-xs-12">User Type</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="user_fk_user_id" class="form-control form-control-line" onchange="User.OnSelectUser(this.value)">
+                                    <option value="">Select User</option>
+                                    <option value="2">Vendor</option>
+                                    <option value="3">User</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6  col-xs-12">
+                            <label class="col-md-12 col-xs-12">First Name</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" id="user_first_name" placeholder="Firstname" class="form-control form-control-line">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Last Name</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" placeholder="Lastname" class="form-control form-control-line" id="user_last_name">
+                            </div>
+                        </div>
+                        <div id="user_username_formgroup" class="form-group col-md-6  col-xs-12" hidden>
+                            <label class="col-md-12 col-xs-12">UserName</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" id="user_username" placeholder="Username" class="form-control form-control-line">
+                            </div>
+                        </div>
+                        <div id="user_password_formgroup" class="form-group col-md-6  col-xs-12" hidden>
+                            <label for="example-email" class="col-md-12 col-xs-12">Password</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="password" placeholder="Password" class="form-control form-control-line" id="user_userpassword">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6  col-xs-12">
+                            <label class="col-md-12 col-xs-12">Email</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="email" placeholder="Email" class="form-control form-control-line" name="example-email" id="user_email">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Contact</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" placeholder="Contact No." class="form-control form-control-line" id="user_contact">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Country</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="user_fk_country_id" class="form-control form-control-line" onchange="User.LoadState(this.value)">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">State</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="user_fk_state_id" class="form-control form-control-line" onchange="User.LoadCity(this.value)">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">City</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="user_fk_city_id" class="form-control form-control-line">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6  col-xs-12" style="top: 30px;" hidden id="user_is_active_section">
+                            <input type="checkbox" class="form-check-input" id="user_is_active">
+                            <label class="form-check-label" for="exampleCheck1">Is Active</label>
+                        </div>
+                        <div class="form-group col-md-6  col-xs-12" style="top: 30px;" hidden id="user_is_paid_section">
+                            <input type="checkbox" class="form-check-input" id="user_is_paid">
+                            <label class="form-check-label" for="exampleCheck1">Is Paid</label>
+                        </div>
+                        <div class="form-group col-md-12  col-xs-12" id="user_text_area_section">
+                            <label for="about-us" class="col-md-12 col-xs-12">About Us</label>
+                            <div class="col-md-12 col-xs-12">
+                                <textarea type="text" rows="3" placeholder="About Us..." class="form-control form-control-line" id="user_about_us"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <button class="btn btn-primary pull-right" id="user_add_update_profile_btn" onclick="User.UpdateProfile()"><i id="user_btn_spinner" class="fa fa-circle-o-notch fa-spin hidden"></i>&nbsp;<span id="user_btn_text"> Update</span></button>
+                    <button class="btn btn-default pull-right" id="user_add_reset_profile_btn" onclick="" type="reset" hidden>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" id="user_password_section">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Password Reset</h3>
+                <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal form-material">
+                    <div class="col-md-12 notification" id="password_notification_block" hidden>
+                        <p id="password_notification_text"></p>
+                    </div>
+                    <br />
+                    <div class="form-group col-md-12 col-xs-12">
+                        <label for="example-email" class="col-md-12 col-xs-12">Old Password</label>
+                        <div class="col-md-12 col-xs-12">
+                            <input type="password" placeholder="Lastname" class="form-control form-control-line" id="user_password_old">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 col-xs-12">
+                        <label for="example-email" class="col-md-12 col-xs-12">New Password</label>
+                        <div class="col-md-12 col-xs-12">
+                            <input type="password" placeholder="Lastname" class="form-control form-control-line" id="user_password_new">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 col-xs-12">
+                        <label for="example-email" class="col-md-12 col-xs-12">Confirm Password</label>
+                        <div class="col-md-12 col-xs-12">
+                            <input type="password" placeholder="Lastname" class="form-control form-control-line" id="user_password_confirm">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group col-md-12 col-xs-12">
+                        <span id="password_status_text"></span>
+                    </div>
+                    <br />
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <button class="btn btn-primary col-xs-6 col-xs-6 pull-right" onclick="User.UpdatePassword()">Password Change</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

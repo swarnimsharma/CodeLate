@@ -1,0 +1,185 @@
+﻿@model List<Portal.ViewModels.VendorPlansPricing>
+
+<div class="row">
+    @foreach (var plan in Model)
+    {
+        if (plan.selected_user_plan != null)
+        {
+            //Hidden Fields
+            <input type="hidden" id="hdVendorPlanID" value="@plan.selected_user_plan" />
+            <div class="col-xs-12 col-md-4" style="opacity: .5 !important">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Your Current Plan is  @plan.plan_name
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="the-price">
+                            <h2>
+                                INR @plan.plan_price_amount<span class="subscript"> / @plan.plan_duration</span>
+                            </h2>
+                            @*<small>1 month FREE trial</small>*@
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <td style="text-align:center">
+                                    @plan.candidate_listing Candidate Listing Limit
+                                </td>
+                            </tr>
+                            <tr class="active">
+                                <td style="text-align:center">
+                                    @plan.interest_recieved_listing Interest Recieved Limit
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center">
+                                    @plan.lead_access_limit Lead Access Limit
+                                </td>
+                            </tr>
+                            <tr class="active">
+                                @if (!string.IsNullOrEmpty(plan.country_listing))
+                                {
+                                    <td style="text-align:center">
+                                        Country Listing -@Html.Raw(plan.country_listing)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td style="text-align:center">
+                                        Country Listing - <span class='badge badge-secondary'>All</span>
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                @if (!string.IsNullOrEmpty(plan.state_listing))
+                                {
+                                    <td style="text-align:center">
+                                        State Listing -@Html.Raw(plan.state_listing)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td style="text-align:center">
+                                        State Listing - <span class='badge badge-secondary'>All</span>
+                                    </td>
+                                }
+                            </tr>
+                            <tr class="active">
+                                @if (!string.IsNullOrEmpty(plan.city_listing))
+                                {
+                                    <td style="text-align:center">
+                                        City Listing -@Html.Raw(plan.city_listing)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td style="text-align:center">
+                                        City Listing - <span class='badge badge-secondary'>All</span>
+                                    </td>
+                                }
+                            </tr>
+                        </table>
+                    </div>
+                    @if (Convert.ToBoolean(plan.is_plan_activated_by_admin))
+                    {
+                        <div class="panel-footer">
+                            <span class="btn btn-warning" role="button">Activated</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="panel-footer">
+                            <span class="btn btn-warning" role="button">Status Pending</span>
+                        </div>
+                    }
+                   
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-xs-12 col-md-4">
+                <div class="panel panel-primary" style="border-style:dotted">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Upgrade To @plan.plan_name
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="the-price">
+                            <h2>
+                                INR @plan.plan_price_amount<span class="subscript"> / @plan.plan_duration</span>
+                            </h2>
+                            @*<small>1 month FREE trial</small>*@
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <td style="text-align:center">
+                                    @plan.candidate_listing Candidate Listing Limit
+                                </td>
+                            </tr>
+                            <tr class="active">
+                                <td style="text-align:center">
+                                    @plan.interest_recieved_listing Interest Recieved Limit
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center">
+                                    @plan.lead_access_limit Lead Access Limit
+                                </td>
+                            </tr>
+                            <tr class="active">
+                                @if (!string.IsNullOrEmpty(plan.country_listing))
+                                {
+                                    <td style="text-align:center">
+                                        Country Listing -@Html.Raw(plan.country_listing)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td style="text-align:center">
+                                        Country Listing - <span class='badge badge-secondary'>All</span>
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                @if (!string.IsNullOrEmpty(plan.state_listing))
+                                {
+                                    <td style="text-align:center">
+                                        State Listing -@Html.Raw(plan.state_listing)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td style="text-align:center">
+                                        State Listing - <span class='badge badge-secondary'>All</span>
+                                    </td>
+                                }
+                            </tr>
+                            <tr class="active">
+                                @if (!string.IsNullOrEmpty(plan.city_listing))
+                                {
+                                    <td style="text-align:center">
+                                        City Listing -@Html.Raw(plan.city_listing)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td style="text-align:center">
+                                        City Listing - <span class='badge badge-secondary'>All</span>
+                                    </td>
+                                }
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="panel-footer">
+                        <a href="#" class="btn btn-success" role="button" onclick="VendorPlan.SelectVendorPlan(@plan.pk_vendor_pricing_id)">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+</div>

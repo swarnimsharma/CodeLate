@@ -1,0 +1,7 @@
+﻿var AdminUser = {
+    OnAdUserProfile:function()
+    {
+        
+
+    }
+}

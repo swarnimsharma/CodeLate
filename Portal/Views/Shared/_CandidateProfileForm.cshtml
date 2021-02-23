@@ -1,0 +1,139 @@
+﻿<div class="modal fade" id="candidate_profile_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="padding-left: 214px;" >Candidate Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @* Hidden *@
+                <input type="hidden" id="candidate_pk_id" />
+                <div class="row">
+                    <div class="col-md-3" style="left: 35%;">
+                        <input type="hidden" id="user_pk_id" value="@ViewBag.current_user_id" />
+                        <div class="preview text-center">
+                            <img class="preview-img" id="profile_image_preview" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" style="width: 150px; height:150px">
+                            <div class="browse-button">
+                                <i class="fa fa-pencil-alt"></i>
+                                <input class="browse-input" type="file" required="" name="UploadedFile" id="candidate_profile_image">
+                                <input type="hidden" id="hidden_candidate_pic" />
+                            </div>
+                            <span class="Error"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="form-horizontal form-material">
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label class="col-md-12 col-xs-12">First Name</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" id="candidate_first_name" placeholder="Firstname" class="form-control form-control-line">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Last Name</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" placeholder="Lastname" class="form-control form-control-line" id="candidate_last_name">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label class="col-md-12 col-xs-12">Email</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="email" placeholder="Email" class="form-control form-control-line" name="example-email" id="candidate_email">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Contact</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" placeholder="Contact No." class="form-control form-control-line" id="candidate_contact">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Country</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="candidate_country" class="form-control form-control-line" onchange="Candidate.LoadState(this.value)"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">State</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="candidate_state" class="form-control form-control-line" onchange="Candidate.LoadCity(this.value)">
+                                    <option>Select Country</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">City</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="candidate_city" class="form-control form-control-line">
+                                    <option>Select State</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Experience</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="candidate_experience" class="form-control form-control-line"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Expertise</label>
+                            <div class="col-md-12 col-xs-12">
+                                <select id="candidate_expertise" class="form-control form-control-line" multiple></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Availability</label>
+                            <div class="col-md-12 col-xs-12">
+                                @*<input type="number" placeholder="Availability (In Days)" class="form-control form-control-line" id="candidate_availability">*@
+                                <select id="candidate_availability" class="form-control" onchange="Candidate.SearchCandidates()">
+                                    <option value="">Availability</option>
+                                    <option value="Immediate">Immediate</option>
+                                    <option value="7">7 days</option>
+                                    <option value="15">15 days</option>
+                                    <option value="20">20 days</option>
+                                    <option value="25">25 days</option>
+                                    <option value="30_more">30 and more days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4  col-xs-12">
+                            <label for="example-email" class="col-md-12 col-xs-12">Job Type</label>
+                            <div class="col-md-12 col-xs-12">
+                                @*<input type="number" placeholder="Availability (In Days)" class="form-control form-control-line" id="candidate_availability">*@
+                                <select id="candidate_job_type" class="form-control" onchange="">
+                                    <option value="">Employment</option>
+                                    <option value="1">Both</option>
+                                    <option value="2">Full Time</option>
+                                    <option value="3">Contractual</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2  col-xs-10">
+                            <label for="example-email" class="col-md-12 col-xs-12">Minimum Tenure</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" placeholder="Tenure" class="form-control form-control-line" id="candidate_tenure">
+                            </div>
+                        </div>
+                        <div class="form-check-input col-md-2  col-xs-2" style="top: 30px;">
+                            <input type="checkbox" class="form-check-input" id="candidate_active">
+                            <label class="form-check-label" for="exampleCheck1">Is Visible</label>
+                        </div>
+                        <div class="form-group col-md-12  col-xs-12">
+                            <label for="about-us" class="col-md-12 col-xs-12">About Us</label>
+                            <div class="col-md-12 col-xs-12">
+                                <textarea type="text" rows="3" placeholder="About Us..." class="form-control form-control-line" id="candidate_about_us"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="Candidate.SaveUpdateCandidate()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

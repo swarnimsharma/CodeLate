@@ -1,0 +1,21 @@
+git clone https://infoxen_dev@bitbucket.org/infoxen_dev/codelate.git
+
+devcenter@infoxen.com
+
+Infoxen@1234
+
+
+ //public ActionResult AddCandidatePlans(PlansViewModel model)
+        //{
+        //    ICandidateBL candidateBL = new CandidateEngine();
+        //    try
+        //    {
+        //        var data = candidateBL.AddCandidatePlan(model);
+        //        return View(data);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.Error("Error in CandidateController/AddCandidatePlans", ex);
+        //        throw ex;
+        //    }
+        //}

@@ -1,0 +1,71 @@
+﻿<style type="text/css">
+     .modal-requirement .modal-header h4 {
+        text-align: center;
+    }
+</style>
+
+<!-- Modal HTML -->
+<div id="post_requirement_modal" class="modal fade" style="z-index:999999 !important">
+    <div class="modal-dialog modal-requirement popup-modal-1" id="modal-requirement">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Enter Details !</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 notification" id="requirement_notification_block" hidden>
+                    <p id="requirement_notification_text"></p>
+                </div>
+                <div id="post_required_fields_message" class="form-group" hidden>
+                    <span style="color:#d9534f !important">Required Fields can't be empty !</span>
+                </div>
+                <div id="post_alert_message" class="alert" style="" hidden>
+                    <span id="post_status_message"></span>
+                </div>
+                @if (ViewBag.RoleID == null | ViewBag.RoleID == 0)
+                {
+                    <div class="form-group" id="post_requirement_name_section">
+                        <input type="text" class="form-control" id="post_requirement_name" name="name" placeholder="Full Name *" required="required">
+                    </div>
+                    <div class="form-group" id="post_requirement_email_section">
+                        <input type="text" class="form-control" id="post_requirement_email" name="email" placeholder="Email *" required="required">
+                    </div>
+                    <div class="form-group" id="post_requirement_mobile_section">
+                        <input type="text" class="form-control" id="post_requirement_mobile" name="mobile" placeholder="Mobile *" required="required">
+                    </div>
+                }
+                else
+                {
+                    <input type="hidden" id="hidden_current_user_id" value="@ViewBag.RoleID" />
+                }
+                <div class="form-group">
+                    <input type="text" class="form-control" id="post_requirement_subject" name="subject" placeholder="Project Title *" required="required">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="post_requirement_title">
+                        <option value="">Select Requirement *</option>
+                        <option value="Project Outsource">Project Outsource</option>
+                        <option value="Offshore">Offshore</option>
+                        <option value="Onsite">Onsite</option>
+                        <option value="T&M">T&M</option>
+                        <option value="Open Discussion">Open Discussion</option>
+                    </select>
+                </div>
+                <div class="form-group" id="project_type_section" hidden>
+                    <select class="form-control" id="post_requirement_project_type">
+                        <option value="">Project Type *</option>
+                        <option value="Mobile App">Mobile App</option>
+                        <option value="Web App">Web App</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea type="text" class="form-control" id="post_requirement_description" name="description" placeholder="Description here..."></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="post_requirement_btn" onclick="Home.PostYourRequirement()" class="btn btn-primary btn-lg btn-block login-btn"><i id="post_btn_spinner" class="fa fa-circle-o-notch fa-spin hidden"></i>&nbsp;Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

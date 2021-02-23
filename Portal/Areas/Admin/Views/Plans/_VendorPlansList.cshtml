@@ -1,0 +1,67 @@
+﻿
+@model List<Portal.ViewModels.VendorPlansViewModel>
+
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="table_get_all_vendor_planlist">
+            <thead>
+                <tr>
+                    <th><center>ID</center></th>
+                    <th><center>Plan</center></th>
+                    <th><center>Candidate Listing Limit</center></th>
+                    <th><center>Interest Received</center></th>
+                    <th><center>Lead Access</center></th>
+                    <th><center>Technology Limit</center></th>
+                    <th><center>Is Active</center></th>
+                    <th><center>Action</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr class="success">
+                    <td>@item.pk_vendor_plan_id</td>
+                    <td>@item.plan_name</td>
+                    <td>@item.candidate_listing_limit</td>
+                    <td>@item.interest_received_limit</td>
+                    <td>@item.lead_access_limit</td>
+                    <td>@item.technology_limit</td>
+                    @if (item.is_active)
+                    {
+                        @:<td>
+                            <span style="background-color: #28a745" class="badge badge-success">Active</span>
+                        @:</td>
+                    }
+                    else
+                    {
+                        <td>InActive</td>
+                    }
+                        <td class="" style="margin:0px auto;">
+                            <a style="color:darkblue" title="Edit" class="fa fa-edit" aria-hidden="true" href="#" onclick="AdminPlans.OpenVendorPlanGetById(@item.pk_vendor_plan_id)"></a> &nbsp;&nbsp;
+                            <a style="color:darkblue" title="Delete" class="fa fa-trash" aria-hidden="true" href="#" onclick="AdminPlans.OpenVendorPlanGetById(@item.pk_vendor_plan_id)"></a>
+                        </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <section class="content">
+        <div class="error-page">
+            <div class="error-content">
+                <h3><i class="fa fa-warning text-yellow"></i> Oops! There is no record.</h3>
+                <p>
+                    Please  <a href="#" onclick="AdminPlans.OpenVendorPlanModal()" class="fa fa-hand-o-right">  <b>click here</b></a> to add a first Plan.
+                </p>
+            </div>
+            <!-- /.error-content -->
+        </div>
+        <!-- /.error-page -->
+    </section>
+    /**/
+}

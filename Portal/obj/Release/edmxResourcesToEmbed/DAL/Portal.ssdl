@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="portal_city">
+    <Key>
+      <PropertyRef Name="pk_city_id" />
+    </Key>
+    <Property Name="pk_city_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="city_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="fk_state_id" Type="int" />
+  </EntityType>
+  <EntityType Name="portal_country">
+    <Key>
+      <PropertyRef Name="pk_country_id" />
+    </Key>
+    <Property Name="pk_country_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="country_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="portal_experience">
+    <Key>
+      <PropertyRef Name="pk_experience_level_id" />
+    </Key>
+    <Property Name="pk_experience_level_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="experience_years" Type="nvarchar" MaxLength="50" />
+    <Property Name="level" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="portal_experise">
+    <Key>
+      <PropertyRef Name="pk_expertise_id" />
+    </Key>
+    <Property Name="pk_expertise_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="expertise_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="is_active" Type="bit" />
+  </EntityType>
+  <EntityType Name="portal_for_interested_Candidate">
+    <Key>
+      <PropertyRef Name="pk_candidate_interested_id" />
+    </Key>
+    <Property Name="pk_candidate_interested_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="requirement_title_select" Type="nvarchar" MaxLength="50" />
+    <Property Name="requirement_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="fk_user_id" Type="int" />
+    <Property Name="requested_date" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="fk_candidate_id" Type="int" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="fk_vendor_id" Type="int" />
+  </EntityType>
+  <EntityType Name="portal_plan">
+    <Key>
+      <PropertyRef Name="pk_plan_type_id" />
+    </Key>
+    <Property Name="pk_plan_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plan_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="is_active" Type="bit" />
+    <Property Name="is_deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="portal_post_requirement">
+    <Key>
+      <PropertyRef Name="pk_requirement_id" />
+    </Key>
+    <Property Name="pk_requirement_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="requirement_title" Type="nvarchar" MaxLength="100" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="50" />
+    <Property Name="email_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile_no" Type="nvarchar" MaxLength="15" />
+    <Property Name="message" Type="nvarchar(max)" />
+    <Property Name="subject" Type="nvarchar" MaxLength="50" />
+    <Property Name="added_date" Type="datetime" />
+    <Property Name="approved_status" Type="int" Nullable="false" />
+    <Property Name="status_reason" Type="nvarchar(max)" />
+    <Property Name="fk_client_id" Type="int" />
+    <Property Name="project_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="client_reason" Type="nvarchar(max)" />
+    <Property Name="image" Type="nvarchar(max)" />
+    <Property Name="status_by_codelate" Type="int" />
+  </EntityType>
+  <EntityType Name="portal_recruiter_profile">
+    <Key>
+      <PropertyRef Name="pk_resource_profile_id" />
+    </Key>
+    <Property Name="pk_resource_profile_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar" MaxLength="50" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="50" />
+    <Property Name="email_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="contact_no" Type="nvarchar" MaxLength="15" />
+    <Property Name="fk_state_id" Type="int" />
+    <Property Name="fk_city_id" Type="int" />
+    <Property Name="fk_country_id" Type="int" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="is_deleted" Type="bit" Nullable="false" />
+    <Property Name="created_date" Type="datetime2" Precision="7" />
+    <Property Name="updated_date" Type="datetime2" Precision="7" />
+    <Property Name="minimum_tenure" Type="nvarchar" MaxLength="10" />
+    <Property Name="fk_experience_level" Type="int" />
+    <Property Name="expertise_profession" Type="nvarchar(max)" />
+    <Property Name="availablity" Type="nvarchar" MaxLength="50" />
+    <Property Name="about_us" Type="nvarchar(max)" />
+    <Property Name="profile_pic" Type="nvarchar(max)" />
+    <Property Name="fk_vendor_id" Type="int" />
+    <Property Name="job_type" Type="int" />
+  </EntityType>
+  <EntityType Name="portal_requirement_vendor_mapping">
+    <Key>
+      <PropertyRef Name="pk_post_requirement_vendor_mapping" />
+    </Key>
+    <Property Name="pk_post_requirement_vendor_mapping" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_post_id" Type="int" />
+    <Property Name="fk_vendor_id" Type="int" />
+    <Property Name="map_date" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="portal_role">
+    <Key>
+      <PropertyRef Name="pk_role_id" />
+    </Key>
+    <Property Name="pk_role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="portal_state">
+    <Key>
+      <PropertyRef Name="pk_state_id" />
+    </Key>
+    <Property Name="pk_state_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="state_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="fk_country_id" Type="int" />
+  </EntityType>
+  <EntityType Name="portal_user">
+    <Key>
+      <PropertyRef Name="pk_user_id" />
+    </Key>
+    <Property Name="pk_user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="firstname" Type="nvarchar" MaxLength="100" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="100" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="500" />
+    <Property Name="profile_pic" Type="nvarchar" MaxLength="100" />
+    <Property Name="about_us" Type="nvarchar" MaxLength="500" />
+    <Property Name="contact" Type="nvarchar" MaxLength="15" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="is_delete" Type="bit" Nullable="false" />
+    <Property Name="created_date" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="updated_date" Type="datetime2" Precision="7" />
+    <Property Name="last_login_date" Type="datetime2" Precision="7" />
+    <Property Name="login_count" Type="int" />
+    <Property Name="fk_country_id" Type="int" />
+    <Property Name="fk_state_id" Type="int" />
+    <Property Name="fk_city_id" Type="int" />
+    <Property Name="is_paid_user" Type="bit" Nullable="false" />
+    <Property Name="user_hash" Type="nvarchar(max)" />
+    <Property Name="is_email_verified" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="portal_user_role_mapping">
+    <Key>
+      <PropertyRef Name="pk_user_role_id" />
+    </Key>
+    <Property Name="pk_user_role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_role_id" Type="int" />
+    <Property Name="fk_user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="portal_vendor_plan">
+    <Key>
+      <PropertyRef Name="pk_vendor_plan_id" />
+    </Key>
+    <Property Name="pk_vendor_plan_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_plan_id" Type="int" />
+    <Property Name="candidate_listing_limit" Type="int" />
+    <Property Name="interest_recived_limit" Type="int" />
+    <Property Name="country_listing" Type="nvarchar(max)" />
+    <Property Name="state_listing" Type="nvarchar(max)" />
+    <Property Name="city_listing" Type="nvarchar(max)" />
+    <Property Name="lead_access_limit" Type="int" />
+    <Property Name="technology_limit" Type="nvarchar(max)" />
+    <Property Name="technology_count" Type="int" />
+    <Property Name="per_technology_count" Type="int" />
+    <Property Name="is_active" Type="bit" />
+    <Property Name="is_deleted" Type="bit" />
+    <Property Name="added_date" Type="datetime2" Precision="7" />
+    <Property Name="country_listing_names" Type="nvarchar(max)" />
+    <Property Name="state_listing_names" Type="nvarchar(max)" />
+    <Property Name="city_listing_names" Type="nvarchar(max)" />
+    <Property Name="custom_plan_price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="portal_vendor_price_plan">
+    <Key>
+      <PropertyRef Name="pk_vendor_plan_price_id" />
+    </Key>
+    <Property Name="pk_vendor_plan_price_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="per_candidate_listing_price" Type="float" />
+    <Property Name="per_interest_received_price" Type="float" />
+    <Property Name="per_leads_access_price" Type="float" />
+    <Property Name="per_technology_price" Type="float" />
+    <Property Name="is_active" Type="bit" />
+    <Property Name="is_deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="portal_what_client_says">
+    <Key>
+      <PropertyRef Name="pk_client_what_says_id" />
+    </Key>
+    <Property Name="pk_client_what_says_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="discription" Type="nvarchar(max)" />
+    <Property Name="client_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="added_datetime" Type="datetime2" Precision="7" />
+    <Property Name="is_published_by_admin" Type="bit" />
+    <Property Name="image" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_portal_city_portal_state">
+    <End Role="portal_state" Type="Self.portal_state" Multiplicity="0..1" />
+    <End Role="portal_city" Type="Self.portal_city" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_state">
+        <PropertyRef Name="pk_state_id" />
+      </Principal>
+      <Dependent Role="portal_city">
+        <PropertyRef Name="fk_state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_experience_portal_city">
+    <End Role="portal_experience" Type="Self.portal_experience" Multiplicity="0..1" />
+    <End Role="portal_recruiter_profile" Type="Self.portal_recruiter_profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_experience">
+        <PropertyRef Name="pk_experience_level_id" />
+      </Principal>
+      <Dependent Role="portal_recruiter_profile">
+        <PropertyRef Name="fk_experience_level" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_interested_candidate_portal_recruiter_profile">
+    <End Role="portal_recruiter_profile" Type="Self.portal_recruiter_profile" Multiplicity="0..1" />
+    <End Role="portal_for_interested_Candidate" Type="Self.portal_for_interested_Candidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_recruiter_profile">
+        <PropertyRef Name="pk_resource_profile_id" />
+      </Principal>
+      <Dependent Role="portal_for_interested_Candidate">
+        <PropertyRef Name="fk_candidate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_interested_candidate_portal_user">
+    <End Role="portal_user" Type="Self.portal_user" Multiplicity="0..1" />
+    <End Role="portal_for_interested_Candidate" Type="Self.portal_for_interested_Candidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_user">
+        <PropertyRef Name="pk_user_id" />
+      </Principal>
+      <Dependent Role="portal_for_interested_Candidate">
+        <PropertyRef Name="fk_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_post_requirement_portal_user">
+    <End Role="portal_user" Type="Self.portal_user" Multiplicity="0..1" />
+    <End Role="portal_post_requirement" Type="Self.portal_post_requirement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_user">
+        <PropertyRef Name="pk_user_id" />
+      </Principal>
+      <Dependent Role="portal_post_requirement">
+        <PropertyRef Name="fk_client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_recruiter_profile_portal_city">
+    <End Role="portal_city" Type="Self.portal_city" Multiplicity="0..1" />
+    <End Role="portal_recruiter_profile" Type="Self.portal_recruiter_profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_city">
+        <PropertyRef Name="pk_city_id" />
+      </Principal>
+      <Dependent Role="portal_recruiter_profile">
+        <PropertyRef Name="fk_city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_recruiter_profile_portal_country">
+    <End Role="portal_country" Type="Self.portal_country" Multiplicity="0..1" />
+    <End Role="portal_recruiter_profile" Type="Self.portal_recruiter_profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_country">
+        <PropertyRef Name="pk_country_id" />
+      </Principal>
+      <Dependent Role="portal_recruiter_profile">
+        <PropertyRef Name="fk_country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_recruiter_profile_portal_state">
+    <End Role="portal_state" Type="Self.portal_state" Multiplicity="0..1" />
+    <End Role="portal_recruiter_profile" Type="Self.portal_recruiter_profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_state">
+        <PropertyRef Name="pk_state_id" />
+      </Principal>
+      <Dependent Role="portal_recruiter_profile">
+        <PropertyRef Name="fk_state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_state_portal_country">
+    <End Role="portal_country" Type="Self.portal_country" Multiplicity="0..1" />
+    <End Role="portal_state" Type="Self.portal_state" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_country">
+        <PropertyRef Name="pk_country_id" />
+      </Principal>
+      <Dependent Role="portal_state">
+        <PropertyRef Name="fk_country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_user_portal_city">
+    <End Role="portal_city" Type="Self.portal_city" Multiplicity="0..1" />
+    <End Role="portal_user" Type="Self.portal_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_city">
+        <PropertyRef Name="pk_city_id" />
+      </Principal>
+      <Dependent Role="portal_user">
+        <PropertyRef Name="fk_city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_user_portal_country">
+    <End Role="portal_country" Type="Self.portal_country" Multiplicity="0..1" />
+    <End Role="portal_user" Type="Self.portal_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_country">
+        <PropertyRef Name="pk_country_id" />
+      </Principal>
+      <Dependent Role="portal_user">
+        <PropertyRef Name="fk_country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_user_portal_state">
+    <End Role="portal_state" Type="Self.portal_state" Multiplicity="0..1" />
+    <End Role="portal_user" Type="Self.portal_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_state">
+        <PropertyRef Name="pk_state_id" />
+      </Principal>
+      <Dependent Role="portal_user">
+        <PropertyRef Name="fk_state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_user_role_portal_role">
+    <End Role="portal_role" Type="Self.portal_role" Multiplicity="0..1" />
+    <End Role="portal_user_role_mapping" Type="Self.portal_user_role_mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_role">
+        <PropertyRef Name="pk_role_id" />
+      </Principal>
+      <Dependent Role="portal_user_role_mapping">
+        <PropertyRef Name="fk_role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_user_role_portal_user">
+    <End Role="portal_user" Type="Self.portal_user" Multiplicity="0..1" />
+    <End Role="portal_user_role_mapping" Type="Self.portal_user_role_mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_user">
+        <PropertyRef Name="pk_user_id" />
+      </Principal>
+      <Dependent Role="portal_user_role_mapping">
+        <PropertyRef Name="fk_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portal_vendor_plan_portal_plan">
+    <End Role="portal_plan" Type="Self.portal_plan" Multiplicity="0..1" />
+    <End Role="portal_vendor_plan" Type="Self.portal_vendor_plan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="portal_plan">
+        <PropertyRef Name="pk_plan_type_id" />
+      </Principal>
+      <Dependent Role="portal_vendor_plan">
+        <PropertyRef Name="fk_plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="get_candidate_show_interest_by_client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="portal_get_candidates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="title" Type="nvarchar" Mode="In" />
+    <Parameter Name="locality" Type="nvarchar" Mode="In" />
+    <Parameter Name="fk_experience_id" Type="int" Mode="In" />
+    <Parameter Name="user_id" Type="int" Mode="In" />
+    <Parameter Name="job_type" Type="int" Mode="In" />
+  </Function>
+  <Function Name="portal_get_candidates_by_vendor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user_id" Type="int" Mode="In" />
+    <Parameter Name="candidate_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="technology" Type="nvarchar" Mode="In" />
+    <Parameter Name="experience" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="portal_get_cities_by_state" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="state_id" Type="int" Mode="In" />
+    <Parameter Name="state_ids" Type="nvarchar" Mode="In" />
+    <Parameter Name="search" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="portal_get_post_requirement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="title" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="portal_get_states_by_country" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="country_id" Type="int" Mode="In" />
+    <Parameter Name="country_ids" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="portal_SplitString" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="string" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="delimiter" Type="char" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="splitdata" Type="nvarchar(max)" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <EntityContainer Name="PortalModelStoreContainer">
+    <EntitySet Name="portal_city" EntityType="Self.portal_city" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_country" EntityType="Self.portal_country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_experience" EntityType="Self.portal_experience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_experise" EntityType="Self.portal_experise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_for_interested_Candidate" EntityType="Self.portal_for_interested_Candidate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_plan" EntityType="Self.portal_plan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_post_requirement" EntityType="Self.portal_post_requirement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_recruiter_profile" EntityType="Self.portal_recruiter_profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_requirement_vendor_mapping" EntityType="Self.portal_requirement_vendor_mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_role" EntityType="Self.portal_role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_state" EntityType="Self.portal_state" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_user" EntityType="Self.portal_user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_user_role_mapping" EntityType="Self.portal_user_role_mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_vendor_plan" EntityType="Self.portal_vendor_plan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_vendor_price_plan" EntityType="Self.portal_vendor_price_plan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="portal_what_client_says" EntityType="Self.portal_what_client_says" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_portal_city_portal_state" Association="Self.FK_portal_city_portal_state">
+      <End Role="portal_state" EntitySet="portal_state" />
+      <End Role="portal_city" EntitySet="portal_city" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_experience_portal_city" Association="Self.FK_portal_experience_portal_city">
+      <End Role="portal_experience" EntitySet="portal_experience" />
+      <End Role="portal_recruiter_profile" EntitySet="portal_recruiter_profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_interested_candidate_portal_recruiter_profile" Association="Self.FK_portal_interested_candidate_portal_recruiter_profile">
+      <End Role="portal_recruiter_profile" EntitySet="portal_recruiter_profile" />
+      <End Role="portal_for_interested_Candidate" EntitySet="portal_for_interested_Candidate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_interested_candidate_portal_user" Association="Self.FK_portal_interested_candidate_portal_user">
+      <End Role="portal_user" EntitySet="portal_user" />
+      <End Role="portal_for_interested_Candidate" EntitySet="portal_for_interested_Candidate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_post_requirement_portal_user" Association="Self.FK_portal_post_requirement_portal_user">
+      <End Role="portal_user" EntitySet="portal_user" />
+      <End Role="portal_post_requirement" EntitySet="portal_post_requirement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_recruiter_profile_portal_city" Association="Self.FK_portal_recruiter_profile_portal_city">
+      <End Role="portal_city" EntitySet="portal_city" />
+      <End Role="portal_recruiter_profile" EntitySet="portal_recruiter_profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_recruiter_profile_portal_country" Association="Self.FK_portal_recruiter_profile_portal_country">
+      <End Role="portal_country" EntitySet="portal_country" />
+      <End Role="portal_recruiter_profile" EntitySet="portal_recruiter_profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_recruiter_profile_portal_state" Association="Self.FK_portal_recruiter_profile_portal_state">
+      <End Role="portal_state" EntitySet="portal_state" />
+      <End Role="portal_recruiter_profile" EntitySet="portal_recruiter_profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_state_portal_country" Association="Self.FK_portal_state_portal_country">
+      <End Role="portal_country" EntitySet="portal_country" />
+      <End Role="portal_state" EntitySet="portal_state" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_user_portal_city" Association="Self.FK_portal_user_portal_city">
+      <End Role="portal_city" EntitySet="portal_city" />
+      <End Role="portal_user" EntitySet="portal_user" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_user_portal_country" Association="Self.FK_portal_user_portal_country">
+      <End Role="portal_country" EntitySet="portal_country" />
+      <End Role="portal_user" EntitySet="portal_user" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_user_portal_state" Association="Self.FK_portal_user_portal_state">
+      <End Role="portal_state" EntitySet="portal_state" />
+      <End Role="portal_user" EntitySet="portal_user" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_user_role_portal_role" Association="Self.FK_portal_user_role_portal_role">
+      <End Role="portal_role" EntitySet="portal_role" />
+      <End Role="portal_user_role_mapping" EntitySet="portal_user_role_mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_user_role_portal_user" Association="Self.FK_portal_user_role_portal_user">
+      <End Role="portal_user" EntitySet="portal_user" />
+      <End Role="portal_user_role_mapping" EntitySet="portal_user_role_mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_portal_vendor_plan_portal_plan" Association="Self.FK_portal_vendor_plan_portal_plan">
+      <End Role="portal_plan" EntitySet="portal_plan" />
+      <End Role="portal_vendor_plan" EntitySet="portal_vendor_plan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,61 @@
+﻿@model List<Portal.ViewModels.UserViewModel>
+
+<style>
+   
+</style>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" onclick="Admin.OpenUserModal(0)" class="btn btn-primary pull-right">Add User</button>
+        </div>
+    </div>
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="table_get_all_userlist">
+            <thead>
+                <tr>
+                    <th><center>ID</center></th>
+                    <th><center>Name</center></th>
+                    <th><center>UserName</center></th>
+                    <th><center>Email</center></th>
+                    <th><center>City</center></th>
+                    <th><center>Role</center></th>
+                    <th><center>Status Date</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Is Premium</center></th>
+                    <th><center>Action</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.pk_user_id</td>
+                        <td>@(item.firstname + " " + item.lastname)</td>
+                        <td>@item.user_name</td>
+                        <td>@item.email</td>
+                        <td>@item.city_name</td>
+                        <td>@item.user_role</td>
+                        <td>@item.active_or_not</td>
+                        <td>@item.created_date</td>
+                        <td>
+                            @if (item.is_paid_user)
+                            {
+                                <span style="background-color: #28a745" class="badge badge-success">Premium</span>
+                            }
+                        </td>
+                        <td class="" style="margin:0px auto;">
+                            <a style="color:darkblue" title="Edit" class="fa fa-edit" aria-hidden="true" href="#" onclick="Admin.OpenUserModal(@item.pk_user_id)"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}

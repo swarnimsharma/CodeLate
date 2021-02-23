@@ -1,0 +1,89 @@
+﻿
+@{
+    Layout = "~/Areas/Vendor/Views/Shared/_VendorLayout.cshtml";
+}
+<style>
+    .preview {
+        padding: 10px;
+        position: relative;
+    }
+
+        .preview i {
+            color: white;
+            font-size: 35px;
+            transform: translate(50px,130px);
+        }
+
+    .preview-img {
+        border-radius: 100%;
+        plan-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.7);
+    }
+
+    .browse-button {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        position: absolute; /* Tweak the position property if the element seems to be unfit */
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, transparent, black);
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+        .browse-button:hover {
+            opacity: 1;
+        }
+
+    .browse-input {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        transform: translate(-1px,-26px);
+        opacity: 0;
+    }
+</style>
+
+<div class="container-fluid">
+    @Html.Partial("~/Views/Shared/_UserProfileForm.cshtml")
+
+</div>
+<script src="~/Areas/Vendor/Scripts/jquery.min.js"></script>
+@*<script src="~/Areas/Vendor/Scripts/Modules/Vendor.js"></script>*@
+<script src="~/scripts/Modules/User.js"></script>
+
+<script>
+    //Vendor.LoadProfileImageHandler();
+
+    $(function () {
+        debugger;
+        $("#user_profile_image").change(function () {
+            var data = new FormData();
+            var files = $("#user_profile_image").get(0).files;
+            if (files.length > 0) {
+                data.append("Files", files[0]);
+            }
+            $.ajax({
+                url: "/UploadHandler/UploadFile",
+                type: "POST",
+                processData: false,
+                contentType: false,
+                data: data,
+                success: function (response) {
+                    debugger;
+                    //code after success
+                    $("#profile_image_preview").attr('src', "../../Assets/Images/" + response);
+                    $('#hidden_user_pic').val(response);
+                },
+                error: function (er) {
+                    alert(er);
+                }
+
+            });
+        });
+
+        User.GetProfile(@ViewBag.current_user_id);
+    })
+</script>

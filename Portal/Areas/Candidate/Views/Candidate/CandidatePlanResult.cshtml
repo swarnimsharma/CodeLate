@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "CandidatePlanResult";
+    Layout = "~/Areas/Candidate/Views/Shared/_Layout.cshtml";
+}
+<div id="divRemainingCandidatePlan">
+
+</div>
+
+<script>
+      $(function () {
+            //$('#Candidate_plan_modal').modal('show');
+            $.ajax({
+                method: 'GET',
+                url: '../Candidate/_UserPlanRemaining',
+                success: function (data) {
+                    $('#divRemainingCandidatePlan').html(data);
+                }
+            });
+        })
+
+</script>
+

@@ -1,0 +1,50 @@
+﻿@model List<Portal.ViewModels.RecruiterResultSet>
+
+<input type="hidden" id="hidden_candidate_id" />
+@if (Model != null && Model.Count > 0)
+{
+    <div class="row">
+        <!-- Team member -->
+        @foreach (var item in Model)
+        {
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="image-flip" ontouchstart="">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class="img-fluid" src="http://simpleicon.com/wp-content/uploads/account.png" alt="card image"></p>
+                                    <h4 class="card-title">@item.fullname</h4>
+                                    <p class="card-text"><span>Exp: </span>@item.experience</p>
+                                    <p class="card-text"><span>Expertise: </span></p>
+                                    <p class="card-text"><span>Country: </span>@item.country <strong style="font-size: 18px;">|</strong> <span>State: </span>@item.state <strong style="font-size: 18px;">|</strong> <span>City: </span>@item.city</p>
+                                    <p class="card-text"><span></span>@item.about_us</p>
+
+                                    @if (Session["CurrentUserID"] != null)
+                                    {
+                                        if (item.is_already_interested)
+                                        {
+                                            <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-check"></i>Already Interested</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="#" class="btn btn-primary btn-sm" onclick="Candidate.OpenInterestedModal(@item.pk_resource_profile_id)"><i class="fa fa-heart"></i> Interested to hire ?</a>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <a href="#login_modal" data-toggle="modal" class="btn btn-primary btn-sm" onclick=""><i class="fa fa-heart"></i> Interested?</a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">There are no records yet!!!</h3>
+}

@@ -1,0 +1,549 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" type="image/png" href="~/Assets/Images/favicon/Favicon_Icon_Codelate.png" />
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="http://rawgit.com/saribe/toastr8/master/dist/css/toastr8.min.css" rel="stylesheet" />
+    <link href="~/Content/WebsiteStyle.css" rel="stylesheet" />
+    <link href="~/Content/HomePageSearch/main.css" rel="stylesheet" />
+    <link href="~/Content/jquery.rondell.css" rel="stylesheet" />
+    <link href="~/Content/jquery.magicsearch.min.css" rel="stylesheet" />
+    <link href="~/Content/tag-it.min.css" rel="stylesheet" />
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tag-it/2.0/js/tag-it.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="http://rawgit.com/saribe/toastr8/master/dist/js/toastr8.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/1.7/modernizr-1.7.min.js" integrity="sha256-lU44Xs1u0qsMuR3AMz6hs88b3P4wnUhX5xgTJMuNwls=" crossorigin="anonymous"></script>
+
+    <script src="~/scripts/jquery.carousel.js"></script>
+    <script src="~/scripts/simple_3d_carousel.js"></script>
+    <script src="~/scripts/jquery.magicsearch.js"></script>
+    <script src="~/scripts/jquery.rondell.js"></script>
+    @*
+        <script src="~/scripts/jquery.magicsearch.min.js"></script>*@
+    <script src="~/scripts/tag-it.min.js"></script>
+    <script src="~/scripts/Modules/Home.js"></script>
+    <script src="~/scripts/Modules/Candidate.js"></script>
+    <style>
+
+        /*footer*/
+        .col_white_amrc {
+            color: #FFF;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #263238;
+            min-height: 250px;
+            padding: 10px 5px 25px 5px;
+        }
+
+        .pt2 {
+            padding-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #CCC;
+            padding-bottom: 0px;
+            margin-bottom: 8px;
+        }
+
+        .mb10 {
+            padding-bottom: 15px;
+        }
+
+        .footer_ul_amrc {
+            margin: 0px;
+            list-style-type: none;
+            font-size: 14px;
+            padding: 0px 0px 10px 0px;
+        }
+
+            .footer_ul_amrc li {
+                padding: 0px 0px 5px 0px;
+            }
+
+                .footer_ul_amrc li a {
+                    color: #CCC;
+                }
+
+                    .footer_ul_amrc li a:hover {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+
+        .fleft {
+            float: left;
+        }
+
+        .padding-right {
+            padding-right: 10px;
+        }
+
+        .footer_ul2_amrc {
+            margin: 0px;
+            list-style-type: none;
+            padding: 0px;
+        }
+
+            .footer_ul2_amrc li p {
+                display: table;
+            }
+
+            .footer_ul2_amrc li a:hover {
+                text-decoration: none;
+            }
+
+            .footer_ul2_amrc li i {
+                margin-top: 5px;
+            }
+
+        .bottom_border {
+            border-bottom: 1px solid #323f45;
+            padding-bottom: 20px;
+        }
+
+        .foote_bottom_ul_amrc {
+            list-style-type: none;
+            padding: 0px;
+            display: table;
+            margin-top: 10px;
+            margin-right: auto;
+            margin-bottom: 10px;
+            margin-left: auto;
+        }
+
+            .foote_bottom_ul_amrc li {
+                display: inline;
+            }
+
+                .foote_bottom_ul_amrc li a {
+                    color: #999;
+                    margin: 0 12px;
+                }
+
+        .social_footer_ul {
+            display: table;
+            margin: 15px auto 0 auto;
+            list-style-type: none;
+        }
+
+            .social_footer_ul li {
+                padding-left: 20px;
+                padding-top: 10px;
+                float: left;
+            }
+
+                .social_footer_ul li a {
+                    color: #CCC;
+                    border: 1px solid #CCC;
+                    padding: 8px;
+                    border-radius: 50%;
+                }
+
+                .social_footer_ul li i {
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                }
+        /*End Footer*/
+
+        /*Header*/
+        @@media (min-width: 660px) {
+            .navbar-default {
+                height: 70px;
+                padding-top: 10px;
+            }
+
+            nav {
+                position: fixed;
+                display: block;
+                position: fixed;
+                width: 100%;
+                height: 55px;
+                z-index: 100;
+                margin: 0;
+                padding: 0;
+                background-color: #1e1e1e;
+                text-align: center;
+            }
+        }
+
+        .navbar-default {
+            border: 0 !important;
+        }
+
+        nav {
+            background: #263238 !important;
+            font-size: 18px;
+            color: white !important;
+        }
+
+        @@media (min-width: 768px) {
+            .navbar-header {
+                float: left;
+            }
+        }
+
+        *, *:before, *:after {
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        div#bs-example-navbar-collapse-1 {
+            height: 368px;
+            overflow: hidden;
+            /* text-align: center; */
+            text-decoration: none !important;
+        }
+
+        @@media (min-width: 660px) {
+            .main-nav li {
+                display: inline-block;
+                list-style: none;
+                margin: 0 29px 0 29px;
+            }
+        }
+
+        @@media (min-width: 660px) {
+            .logo a, .main-nav a {
+                font-size: 0.75000em;
+                font-weight: 700;
+                /* letter-spacing: 0.250em; */
+                text-decoration: none;
+                color: #fff;
+                display: block;
+                text-align: center;
+                padding: 2px 0;
+                transition: color 0.3s ease-in-out;
+            }
+        }
+
+        .color_animation {
+            text-decoration: initial;
+            /* word-spacing: 5px; */
+            margin-right: -30px;
+            margin-left: -30px !important;
+            color: white !important;
+            -webkit-transition: color 0.3s ease-out;
+            -moz-transition: color 0.3s ease-in-out;
+            -o-transition: color 0.3s ease-in-out;
+            -ms-transition: color 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out;
+            text-align: center;
+        }
+
+            .color_animation:hover {
+                color: #9BE86F !important;
+                border-bottom: 1px solid #96E16B;
+            }
+
+        /*h1, h2, p, span, a {
+            font-family: "museo-sans", helvetica, sans-serif;
+            color: #2f2e2f;
+            margin: 0;
+            padding: 0;
+        }*/
+
+        .navactive {
+            border-bottom: 1px solid #96E16B;
+        }
+
+        /*End Header*/
+
+    </style>
+</head>
+
+<body class="">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="">
+            <div class="row">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img style="width: 175px;" src="~/Assets/Images/logo/code_late_logo.png" /></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color:#263238;max-height:370px">
+                    <ul class="nav navbar-nav main-nav  clear navbar-right ">
+                        <li class="nav-item"><a href="@Url.Action("Index", "Home" )" class="nav-link  color_animation navactive" id="nav_home">Home</a></li>
+                        <li class="nav-item"><a href="@Url.Action("AboutUs", "Home" )" class="nav-link  color_animation" id="nav_about">About Us</a></li>
+                        <li class="nav-item"><a href="@Url.Action("Careers", "Home" )" class="nav-link  color_animation" id="nav_career">Careers</a></li>
+                        <li class="nav-item"><a href="@Url.Action("CaseStudy", "Home" )" class="nav-link  color_animation" id="nav_casestudy">Case Studies</a></li>
+                        <li class="nav-item"><a href="#contact_form" class="nav-link  color_animation">Contact Us</a></li>
+                        <li class="nav-item"><a data-toggle="modal" class="nav-link color_animation" onclick="Home.OnOpenPostRequirement()" href="#post_requirement_modal">Post Your Requirement</a></li>
+                        <li class="nav-item hidden"><a href="#" onclick="Home.ProjectOutSource()" class="nav-link">Project OutSource</a></li>
+                        <li>
+                            @{ if (Session["CurrentUserID"] == null)
+                            {
+                            <ul class="nav navbar-nav navbar-right ml-auto">
+                                <li class="nav-item">
+                                    <a data-toggle="modal" onclick="Account.ResetLogin()" class="nav-link color_animation" href="#login_modal">Login</a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right ml-auto">
+                                <li class="nav-item">
+                                    <a data-toggle="modal" onclick="Account.ResetRegister()" class="nav-link dropdown-toggle color_animation" href="#register_modal">Register</a>
+                                </li>
+                            </ul>
+                            }
+                            else
+                            {
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="javascript:;" class="user-profile dropdown-toggle color_animation" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp; @Session["CurrentUserName"]
+                                        <span class="fa fa-angle-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-usermenu" style="background:#524e4e !important">
+                                        @if (Session["CurrentUserID"] != null && Convert.ToInt32(Session["CurrentUserRoleID"]) == 1)
+                                        {
+                                        <li style="text-align:center"><a href="@Url.Action(" Profile", "Admin" , new { Area="Admin" })" class="color_animation">Dashboard</a></li>
+                                        }
+                                        @if (Session["CurrentUserID"] != null && Convert.ToInt32(Session["CurrentUserRoleID"]) == 2)
+                                        {
+                                        <li style="text-align:center"><a href="@Url.Action(" Profile", "Vendor" , new { Area="Vendor" })" class="color_animation">Dashboard</a></li>
+                                        }
+                                        @if (Session["CurrentUserID"] != null && Convert.ToInt32(Session["CurrentUserRoleID"]) == 3)
+                                        {
+                                        <li style="text-align:center"><a href="@Url.Action(" Profile", "Client" , new { Area="Client" })" class="color_animation">Dashboard</a></li>
+                                        }
+                                        <li style="text-align:center"><a href="@Url.Action(" Logout", "Home" , new { Area=string.Empty })" class="color_animation"><i style="text-align:center" class="fa fa-sign-out"></i> Log Out</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            }
+                            }
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <section class="banner-area relative" id="home" style="height:300px !important;margin-top:4%">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row fullscreen d-flex align-items-center justify-content-center" style="height: 300px;">
+                <div class="banner-content col-lg-12">
+                    <h1 class="text-white">
+                        <span></span>
+                    </h1>
+                    <form action="#" class="serach-form-area" style="margin-top:15% !important">
+
+                        <div class="row justify-content-center form-wrap">
+                            <div class="row" id="search_validation_message" hidden>
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <span style="color:red !important">Field can't be empty</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 form-cols" style="width:100%">
+                                <input type="hidden" id="hidden_search_titles" value="@ViewBag.search_title" />
+                                <input type="hidden" id="hidden_search_locality" value="@ViewBag.search_locality" />
+                                <input type="hidden" id="hidden_search_experience" value="@ViewBag.search_experience" />
+                                <input type="hidden" id="hidden_search_skills" value="" />
+                                <input type="text" class="form-control" name="search" placeholder="Skills,Designation,Companies" id="search_skills" style="width:100% !important">
+                            </div>
+                            <div class="col-lg-3 form-cols">
+                                <div class="default-select" id="default-selects">
+                                    <input type="text" class="form-control" name="search" placeholder="Location/Locatlity" id="search_location">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 form-cols">
+                                <div class="default-select">
+                                    <select class="form-control" id="search_experience"></select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 form-cols">
+                                <button type="button" class="btn btn-info" onclick="Home.SearchForJobs()">
+                                    <span class="lnr lnr-magnifier"></span> Search
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @*<div class="search-field">
+        <div class="row col-lg-12 form-group inner-search">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input type="hidden" id="hidden_search_titles" value="@ViewBag.search_title" />
+                <input type="hidden" id="hidden_search_locality" value="@ViewBag.search_locality" />
+                <input type="hidden" id="hidden_search_experience" value="@ViewBag.search_experience" />
+                <input type="hidden" id="hidden_search_skills" value="" />
+                <input type="text" class="form-control search-slt" placeholder="Skills,Designation,Companies" id="search_skills">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input type="text" class="form-control search-slt" placeholder="Location/Locatlity" id="search_location">
+                <span id="message" style="font-weight:700"></span>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <select class="form-control search-slt" id="search_experience"></select>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <button type="button" class="btn btn-danger wrn-btn" onclick="Home.SearchForJobs()">Search</button>
+            </div>
+        </div>
+    </div>*@
+
+    <div class="container-fluid" id="bg_section">
+        @RenderBody()
+    </div>
+
+
+    <!--footer starts from here-->
+    <footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                    <a class="d" href="#"><img style="width: 200px;" src="/Assets/Images/logo/code_late_logo.png"></a>
+                    <!--headin5_amrc-->
+                    <p>We are world’s first platform for contractual hiring and leading platform for project outsourcing. We are trusted by the leading brands of industry.</p>
+                </div>
+
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Address</h5>
+                    <!--headin5_amrc-->
+                    <ul class="footer_ul_amrc">
+                        <li>
+                            <i class="fa fa-envelope"></i> <a href="ask@codelate.com">ask@codelate.com</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i> <a href="#"> +91-120-4106877</a><br />
+                        </li>
+                        <li>
+                            <i class="fa fa-mobile"></i> <a href="#">+918882527308</a>
+                        </li>
+                    </ul>
+                    <!--footer_ul_amrc ends here-->
+                </div>
+
+                <div class="col-lg-4  col-md-4 col-sm-4" id="box">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Contact Us!</h5>
+                    <!--headin5_amrc-->
+                    <div class="form-horizontal" id="contact_form">
+                        <fieldset>
+                            <!-- Form Name -->
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input name="first_name" id="contact_name" placeholder="Name" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                        <input name="email" id="contact_email" placeholder="E-Mail Address" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                        <input name="phone" id="contact_contact" placeholder="Contact no" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-md-12 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                        <textarea class="form-control" id="contact_message" name="comment" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <button type="button" id="enquiry_send_button" onclick="Home.ContactEnquiryRequest()" class="btn btn-warning pull-right">Send <span class="glyphicon glyphicon-send"></span></button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <br />
+            <p class="text-center">Copyright 2017 | Designed and Managed by <a href="https://www.infoxen.com" target="_blank"> Infoxen Technologies India Pvt limited</a></p>
+            <ul class="social_footer_ul">
+                <li><a target="_blank" href="https://www.facebook.com/Codelate-109381097086836/?modal=admin_todo_tour"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a target="_blank" href="https://twitter.com/codelate_india"><i class="fa fa-twitter"></i></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/company/20444650/admin"><i class="fa fa-linkedin"></i></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/Codelate/"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+            <!--social_footer_ul ends here-->
+        </div>
+    </footer>
+
+    <script src="~/Areas/Vendor/Scripts/Modules/System.js"></script>
+    <script src="~/scripts/Modules/Account.js"></script>
+    @RenderSection("scripts", false)
+    @Html.Partial("~/Views/Shared/_LoginForm.cshtml")
+    @Html.Partial("~/Views/Shared/_PostRequirement.cshtml")
+    @Html.Partial("~/Views/Shared/_InterestedForCandidate.cshtml")
+    @Html.Partial("~/Views/Shared/_SignupForm.cshtml")
+    <script>
+        $(function () {
+            System.LoadSkillsTagit();
+            System.LoadLocalityOnKeySearch();
+            $(document).ready(function () {
+
+                $('.rotate_container').carousel({
+                    num: 5,
+                    maxWidth: 550,
+                    maxHeight: 400,
+                    distance: 50,
+                    scale: 0.6,
+                    animationTime: 1000,
+                    showTime: 4000
+                });
+                $(document).ready(function () {
+                    $('.container-1').carousel({
+                        num: 5,
+                        maxWidth: 450,
+                        maxHeight: 300,
+                        distance: 50,
+                        scale: 0.6,
+                        animationTime: 1000,
+                        showTime: 4000
+                    });
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

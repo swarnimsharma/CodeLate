@@ -1,0 +1,90 @@
+﻿@model List<Portal.ViewModels.RecruiterResultSet>
+@*<script src="~/Scripts/jquery.tablesorter.js"></script>*@
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@*<table id="table_candidate_list" class="table table-striped table-bordered" style="width:100%;"></table>*@
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="candidate_list">
+            <thead>
+                <tr>
+                    <th><center>ID</center></th>
+                    <th><center>Recruiter Name</center></th>
+                    <th><center>Contact No..</center></th>
+                    <th><center>Email</center></th>
+                    <th><center>Experience</center></th>
+                    <th><center>Technology</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Employement Type</center></th>
+                    <th><center>Is Active</center></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.pk_resource_profile_id</td>
+                        <td>@item.fullname</td>
+                        <td>@item.contact</td>
+                        <td>@item.email</td>
+                        <td>@item.experience</td>
+                        <td>@item.expertise</td>
+                        <td>@item.created_datetime</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.job_type))
+                            {
+                                if (item.job_type == "Both")
+                                {
+                                    <span>Fulltime / Contractual</span>
+                                }
+                                else
+                                {
+                                    <span>@item.job_type</span>
+                                }
+                            }
+                        </td>
+                        <td>@item.is_active</td>
+                        <td class="" style="margin:0px auto;">
+                            <a style="color:darkblue" title="Edit" class="fa fa-edit" aria-hidden="true" href="#" onclick="Candidate.GetCandidateProfile(@item.pk_resource_profile_id)"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>
+
+<script>
+    //$(function () {
+    //    debugger;
+    //    Candidate.LoadCandidateList();
+    //});
+</script>

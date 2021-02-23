@@ -1,0 +1,65 @@
+﻿
+
+<div class="modal fade" id="what_clients_say_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Published</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @* Hidden *@
+                <input type="hidden" id="what_client_pk_id" />
+                <div class="row">
+                    <form class="form-horizontal form-material">
+                        <div class="row">
+                            <div class="col-md-3" style="left: 35%;">
+                                <div class="preview text-center">
+                                    <img class="preview-img" id="client_image_preview" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" style="width: 150px; height:150px">
+                                    <div class="browse-button">
+                                        <i class="fa fa-pencil-alt"></i>
+                                        <input class="browse-input" type="file" required="" name="UploadedFile" id="client_profile_image">
+                                        <input type="hidden" id="hidden_client_pic" />
+                                    </div>
+                                    <span class="Error"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <form class="form-horizontal form-material">
+                        <div class="form-group col-md-12  col-xs-12">
+                            <label class="col-md-12 col-xs-12">Title</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" id="what_client_title" placeholder="Title" class="form-control form-control-line">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12  col-xs-12">
+                            <label class="col-md-12 col-xs-12">Description</label>
+                            <div class="col-md-12 col-xs-12">
+                                <textarea  id="what_client_description" placeholder="Description" class="form-control form-control-line" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12  col-xs-12">
+                            <label class="col-md-12 col-xs-12">Client Name</label>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" id="what_client_name" placeholder="Title" class="form-control form-control-line">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12  col-xs-12">
+                            <input type="checkplan-box" class="form-check-input" id="what_client_is_published">
+                            <label class="form-check-label" for="exampleCheck1">Is Published</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="Admin.WhatsClientSays()">Upload</button>
+            </div>
+        </div>
+    </div>
+</div>
